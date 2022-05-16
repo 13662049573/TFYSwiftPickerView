@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36264E112831DC8F00FA15EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E102831DC8F00FA15EC /* AppDelegate.swift */; };
+		36264E132831DC8F00FA15EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E122831DC8F00FA15EC /* SceneDelegate.swift */; };
+		36264E152831DC8F00FA15EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E142831DC8F00FA15EC /* ViewController.swift */; };
+		36264E182831DC8F00FA15EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36264E162831DC8F00FA15EC /* Main.storyboard */; };
+		36264E1A2831DC9000FA15EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36264E192831DC9000FA15EC /* Assets.xcassets */; };
+		36264E1D2831DC9000FA15EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36264E1B2831DC9000FA15EC /* LaunchScreen.storyboard */; };
+		36264E282831DC9000FA15EC /* TFYSwiftPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E272831DC9000FA15EC /* TFYSwiftPickerViewTests.swift */; };
+		36264E322831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E312831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift */; };
+		36264E342831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E332831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36264E242831DC9000FA15EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36264E052831DC8F00FA15EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36264E0C2831DC8F00FA15EC;
+			remoteInfo = TFYSwiftPickerView;
+		};
+		36264E2E2831DC9100FA15EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36264E052831DC8F00FA15EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36264E0C2831DC8F00FA15EC;
+			remoteInfo = TFYSwiftPickerView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36264E0D2831DC8F00FA15EC /* TFYSwiftPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFYSwiftPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36264E102831DC8F00FA15EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		36264E122831DC8F00FA15EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		36264E142831DC8F00FA15EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		36264E172831DC8F00FA15EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		36264E192831DC9000FA15EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		36264E1C2831DC9000FA15EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		36264E1E2831DC9000FA15EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36264E232831DC9000FA15EC /* TFYSwiftPickerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFYSwiftPickerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36264E272831DC9000FA15EC /* TFYSwiftPickerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftPickerViewTests.swift; sourceTree = "<group>"; };
+		36264E2D2831DC9100FA15EC /* TFYSwiftPickerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFYSwiftPickerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36264E312831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftPickerViewUITests.swift; sourceTree = "<group>"; };
+		36264E332831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftPickerViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36264E0A2831DC8F00FA15EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36264E202831DC9000FA15EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36264E2A2831DC9000FA15EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36264E042831DC8F00FA15EC = {
+			isa = PBXGroup;
+			children = (
+				36264E0F2831DC8F00FA15EC /* TFYSwiftPickerView */,
+				36264E262831DC9000FA15EC /* TFYSwiftPickerViewTests */,
+				36264E302831DC9100FA15EC /* TFYSwiftPickerViewUITests */,
+				36264E0E2831DC8F00FA15EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36264E0E2831DC8F00FA15EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36264E0D2831DC8F00FA15EC /* TFYSwiftPickerView.app */,
+				36264E232831DC9000FA15EC /* TFYSwiftPickerViewTests.xctest */,
+				36264E2D2831DC9100FA15EC /* TFYSwiftPickerViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36264E0F2831DC8F00FA15EC /* TFYSwiftPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				36264E102831DC8F00FA15EC /* AppDelegate.swift */,
+				36264E122831DC8F00FA15EC /* SceneDelegate.swift */,
+				36264E142831DC8F00FA15EC /* ViewController.swift */,
+				36264E162831DC8F00FA15EC /* Main.storyboard */,
+				36264E192831DC9000FA15EC /* Assets.xcassets */,
+				36264E1B2831DC9000FA15EC /* LaunchScreen.storyboard */,
+				36264E1E2831DC9000FA15EC /* Info.plist */,
+			);
+			path = TFYSwiftPickerView;
+			sourceTree = "<group>";
+		};
+		36264E262831DC9000FA15EC /* TFYSwiftPickerViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				36264E272831DC9000FA15EC /* TFYSwiftPickerViewTests.swift */,
+			);
+			path = TFYSwiftPickerViewTests;
+			sourceTree = "<group>";
+		};
+		36264E302831DC9100FA15EC /* TFYSwiftPickerViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				36264E312831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift */,
+				36264E332831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift */,
+			);
+			path = TFYSwiftPickerViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36264E0C2831DC8F00FA15EC /* TFYSwiftPickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36264E372831DC9100FA15EC /* Build configuration list for PBXNativeTarget "TFYSwiftPickerView" */;
+			buildPhases = (
+				36264E092831DC8F00FA15EC /* Sources */,
+				36264E0A2831DC8F00FA15EC /* Frameworks */,
+				36264E0B2831DC8F00FA15EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TFYSwiftPickerView;
+			productName = TFYSwiftPickerView;
+			productReference = 36264E0D2831DC8F00FA15EC /* TFYSwiftPickerView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36264E222831DC9000FA15EC /* TFYSwiftPickerViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36264E3A2831DC9100FA15EC /* Build configuration list for PBXNativeTarget "TFYSwiftPickerViewTests" */;
+			buildPhases = (
+				36264E1F2831DC9000FA15EC /* Sources */,
+				36264E202831DC9000FA15EC /* Frameworks */,
+				36264E212831DC9000FA15EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36264E252831DC9000FA15EC /* PBXTargetDependency */,
+			);
+			name = TFYSwiftPickerViewTests;
+			productName = TFYSwiftPickerViewTests;
+			productReference = 36264E232831DC9000FA15EC /* TFYSwiftPickerViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		36264E2C2831DC9000FA15EC /* TFYSwiftPickerViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36264E3D2831DC9100FA15EC /* Build configuration list for PBXNativeTarget "TFYSwiftPickerViewUITests" */;
+			buildPhases = (
+				36264E292831DC9000FA15EC /* Sources */,
+				36264E2A2831DC9000FA15EC /* Frameworks */,
+				36264E2B2831DC9000FA15EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36264E2F2831DC9100FA15EC /* PBXTargetDependency */,
+			);
+			name = TFYSwiftPickerViewUITests;
+			productName = TFYSwiftPickerViewUITests;
+			productReference = 36264E2D2831DC9100FA15EC /* TFYSwiftPickerViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36264E052831DC8F00FA15EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					36264E0C2831DC8F00FA15EC = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					36264E222831DC9000FA15EC = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 36264E0C2831DC8F00FA15EC;
+					};
+					36264E2C2831DC9000FA15EC = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 36264E0C2831DC8F00FA15EC;
+					};
+				};
+			};
+			buildConfigurationList = 36264E082831DC8F00FA15EC /* Build configuration list for PBXProject "TFYSwiftPickerView" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 36264E042831DC8F00FA15EC;
+			productRefGroup = 36264E0E2831DC8F00FA15EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36264E0C2831DC8F00FA15EC /* TFYSwiftPickerView */,
+				36264E222831DC9000FA15EC /* TFYSwiftPickerViewTests */,
+				36264E2C2831DC9000FA15EC /* TFYSwiftPickerViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36264E0B2831DC8F00FA15EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36264E1D2831DC9000FA15EC /* LaunchScreen.storyboard in Resources */,
+				36264E1A2831DC9000FA15EC /* Assets.xcassets in Resources */,
+				36264E182831DC8F00FA15EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36264E212831DC9000FA15EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36264E2B2831DC9000FA15EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36264E092831DC8F00FA15EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36264E152831DC8F00FA15EC /* ViewController.swift in Sources */,
+				36264E112831DC8F00FA15EC /* AppDelegate.swift in Sources */,
+				36264E132831DC8F00FA15EC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36264E1F2831DC9000FA15EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36264E282831DC9000FA15EC /* TFYSwiftPickerViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36264E292831DC9000FA15EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36264E322831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift in Sources */,
+				36264E342831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36264E252831DC9000FA15EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36264E0C2831DC8F00FA15EC /* TFYSwiftPickerView */;
+			targetProxy = 36264E242831DC9000FA15EC /* PBXContainerItemProxy */;
+		};
+		36264E2F2831DC9100FA15EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36264E0C2831DC8F00FA15EC /* TFYSwiftPickerView */;
+			targetProxy = 36264E2E2831DC9100FA15EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36264E162831DC8F00FA15EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36264E172831DC8F00FA15EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		36264E1B2831DC9000FA15EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36264E1C2831DC9000FA15EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36264E352831DC9100FA15EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		36264E362831DC9100FA15EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36264E382831DC9100FA15EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W27SB687KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TFYSwiftPickerView/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36264E392831DC9100FA15EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W27SB687KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TFYSwiftPickerView/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		36264E3B2831DC9100FA15EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W27SB687KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TFYSwiftPickerView.app/TFYSwiftPickerView";
+			};
+			name = Debug;
+		};
+		36264E3C2831DC9100FA15EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W27SB687KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TFYSwiftPickerView.app/TFYSwiftPickerView";
+			};
+			name = Release;
+		};
+		36264E3E2831DC9100FA15EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W27SB687KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TFYSwiftPickerView;
+			};
+			name = Debug;
+		};
+		36264E3F2831DC9100FA15EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W27SB687KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TFYSwiftPickerView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36264E082831DC8F00FA15EC /* Build configuration list for PBXProject "TFYSwiftPickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36264E352831DC9100FA15EC /* Debug */,
+				36264E362831DC9100FA15EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36264E372831DC9100FA15EC /* Build configuration list for PBXNativeTarget "TFYSwiftPickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36264E382831DC9100FA15EC /* Debug */,
+				36264E392831DC9100FA15EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36264E3A2831DC9100FA15EC /* Build configuration list for PBXNativeTarget "TFYSwiftPickerViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36264E3B2831DC9100FA15EC /* Debug */,
+				36264E3C2831DC9100FA15EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36264E3D2831DC9100FA15EC /* Build configuration list for PBXNativeTarget "TFYSwiftPickerViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36264E3E2831DC9100FA15EC /* Debug */,
+				36264E3F2831DC9100FA15EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36264E052831DC8F00FA15EC /* Project object */;
+}
