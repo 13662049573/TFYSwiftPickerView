@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   swift版选择器，最低支持ios 12 ,swift5
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/TFYSwiftPickerViewKit"
+  spec.homepage     = "https://github.com/13662049573/TFYSwiftPickerView"
  
   spec.license      = "MIT"
   
@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
 
   spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
 
-  spec.source       = { :git => "http://EXAMPLE/TFYSwiftPickerViewKit.git", :tag => spec.version }
+  spec.source       = { :git => "https://github.com/13662049573/TFYSwiftPickerView.git", :tag => spec.version }
 
   spec.subspec 'Base' do |ss|
     ss.source_files  = "TFYSwiftPickerView/TFYSwiftPickerViewKit/Base/*.{swift}"
