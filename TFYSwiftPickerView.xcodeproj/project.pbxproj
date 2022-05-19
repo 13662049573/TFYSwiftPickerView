@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36264E112831DC8F00FA15EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E102831DC8F00FA15EC /* AppDelegate.swift */; };
-		36264E132831DC8F00FA15EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E122831DC8F00FA15EC /* SceneDelegate.swift */; };
-		36264E152831DC8F00FA15EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E142831DC8F00FA15EC /* ViewController.swift */; };
 		36264E182831DC8F00FA15EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36264E162831DC8F00FA15EC /* Main.storyboard */; };
 		36264E1A2831DC9000FA15EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36264E192831DC9000FA15EC /* Assets.xcassets */; };
 		36264E1D2831DC9000FA15EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36264E1B2831DC9000FA15EC /* LaunchScreen.storyboard */; };
 		36264E282831DC9000FA15EC /* TFYSwiftPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E272831DC9000FA15EC /* TFYSwiftPickerViewTests.swift */; };
 		36264E322831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E312831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift */; };
 		36264E342831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E332831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift */; };
+		36264E462831DCD900FA15EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E422831DCD800FA15EC /* AppDelegate.swift */; };
+		36264E472831DCD900FA15EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E432831DCD800FA15EC /* SceneDelegate.swift */; };
+		36264E482831DCD900FA15EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E452831DCD900FA15EC /* ViewController.swift */; };
+		36264E4E2831DE1700FA15EC /* TFYSwiftBaseMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E4D2831DE1700FA15EC /* TFYSwiftBaseMacro.swift */; };
+		36264E502831E8A000FA15EC /* TFYSwiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E4F2831E8A000FA15EC /* TFYSwiftTableViewCell.swift */; };
+		36264E522831ED8400FA15EC /* TFYSwiftPickerBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E512831ED8400FA15EC /* TFYSwiftPickerBaseView.swift */; };
+		36264E542831FB9A00FA15EC /* TFYSwiftStringPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E532831FB9A00FA15EC /* TFYSwiftStringPickerView.swift */; };
+		36264E562833198100FA15EC /* Date+Swiftpicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264E552833198100FA15EC /* Date+Swiftpicker.swift */; };
+		36D11026283376AB0068E67E /* TFYSwiftDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D11025283376AB0068E67E /* TFYSwiftDatePickerView.swift */; };
+		36D1102828339FAB0068E67E /* TFYSwiftPickerShowBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1102728339FAB0068E67E /* TFYSwiftPickerShowBaseView.swift */; };
+		36D1102A28348C430068E67E /* TFYSwiftAddressPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1102928348C430068E67E /* TFYSwiftAddressPickerView.swift */; };
+		36D1103A283499210068E67E /* TFYSwiftAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D11039283499210068E67E /* TFYSwiftAddressModel.swift */; };
+		36D1103C283499C70068E67E /* TFYSwiftCityBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36D1103B283499C70068E67E /* TFYSwiftCityBundle.bundle */; };
+		36F283602835D53300460789 /* TFYSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F2835F2835D53300460789 /* TFYSwiftExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +48,6 @@
 
 /* Begin PBXFileReference section */
 		36264E0D2831DC8F00FA15EC /* TFYSwiftPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFYSwiftPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		36264E102831DC8F00FA15EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36264E122831DC8F00FA15EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		36264E142831DC8F00FA15EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36264E172831DC8F00FA15EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36264E192831DC9000FA15EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36264E1C2831DC9000FA15EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,20 @@
 		36264E2D2831DC9100FA15EC /* TFYSwiftPickerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFYSwiftPickerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36264E312831DC9100FA15EC /* TFYSwiftPickerViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftPickerViewUITests.swift; sourceTree = "<group>"; };
 		36264E332831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftPickerViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		36264E422831DCD800FA15EC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		36264E432831DCD800FA15EC /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		36264E452831DCD900FA15EC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		36264E4D2831DE1700FA15EC /* TFYSwiftBaseMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftBaseMacro.swift; sourceTree = "<group>"; };
+		36264E4F2831E8A000FA15EC /* TFYSwiftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftTableViewCell.swift; sourceTree = "<group>"; };
+		36264E512831ED8400FA15EC /* TFYSwiftPickerBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftPickerBaseView.swift; sourceTree = "<group>"; };
+		36264E532831FB9A00FA15EC /* TFYSwiftStringPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftStringPickerView.swift; sourceTree = "<group>"; };
+		36264E552833198100FA15EC /* Date+Swiftpicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Swiftpicker.swift"; sourceTree = "<group>"; };
+		36D11025283376AB0068E67E /* TFYSwiftDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftDatePickerView.swift; sourceTree = "<group>"; };
+		36D1102728339FAB0068E67E /* TFYSwiftPickerShowBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftPickerShowBaseView.swift; sourceTree = "<group>"; };
+		36D1102928348C430068E67E /* TFYSwiftAddressPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftAddressPickerView.swift; sourceTree = "<group>"; };
+		36D11039283499210068E67E /* TFYSwiftAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftAddressModel.swift; sourceTree = "<group>"; };
+		36D1103B283499C70068E67E /* TFYSwiftCityBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TFYSwiftCityBundle.bundle; sourceTree = "<group>"; };
+		36F2835F2835D53300460789 /* TFYSwiftExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +121,9 @@
 		36264E0F2831DC8F00FA15EC /* TFYSwiftPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				36264E102831DC8F00FA15EC /* AppDelegate.swift */,
-				36264E122831DC8F00FA15EC /* SceneDelegate.swift */,
-				36264E142831DC8F00FA15EC /* ViewController.swift */,
+				36264E412831DCD800FA15EC /* AppDelegate */,
+				36264E442831DCD900FA15EC /* Classs */,
+				36264E402831DCD800FA15EC /* TFYSwiftPickerViewKit */,
 				36264E162831DC8F00FA15EC /* Main.storyboard */,
 				36264E192831DC9000FA15EC /* Assets.xcassets */,
 				36264E1B2831DC9000FA15EC /* LaunchScreen.storyboard */,
@@ -125,6 +147,73 @@
 				36264E332831DC9100FA15EC /* TFYSwiftPickerViewUITestsLaunchTests.swift */,
 			);
 			path = TFYSwiftPickerViewUITests;
+			sourceTree = "<group>";
+		};
+		36264E402831DCD800FA15EC /* TFYSwiftPickerViewKit */ = {
+			isa = PBXGroup;
+			children = (
+				36D1103B283499C70068E67E /* TFYSwiftCityBundle.bundle */,
+				36264E492831DDBF00FA15EC /* Address */,
+				36264E4B2831DDBF00FA15EC /* Base */,
+				36264E4C2831DDBF00FA15EC /* Data */,
+				36264E4A2831DDBF00FA15EC /* String */,
+			);
+			path = TFYSwiftPickerViewKit;
+			sourceTree = "<group>";
+		};
+		36264E412831DCD800FA15EC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				36264E422831DCD800FA15EC /* AppDelegate.swift */,
+				36264E432831DCD800FA15EC /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		36264E442831DCD900FA15EC /* Classs */ = {
+			isa = PBXGroup;
+			children = (
+				36264E452831DCD900FA15EC /* ViewController.swift */,
+				36264E4F2831E8A000FA15EC /* TFYSwiftTableViewCell.swift */,
+			);
+			path = Classs;
+			sourceTree = "<group>";
+		};
+		36264E492831DDBF00FA15EC /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				36D1102928348C430068E67E /* TFYSwiftAddressPickerView.swift */,
+				36D11039283499210068E67E /* TFYSwiftAddressModel.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		36264E4A2831DDBF00FA15EC /* String */ = {
+			isa = PBXGroup;
+			children = (
+				36264E532831FB9A00FA15EC /* TFYSwiftStringPickerView.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		36264E4B2831DDBF00FA15EC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				36264E4D2831DE1700FA15EC /* TFYSwiftBaseMacro.swift */,
+				36264E512831ED8400FA15EC /* TFYSwiftPickerBaseView.swift */,
+				36D1102728339FAB0068E67E /* TFYSwiftPickerShowBaseView.swift */,
+				36F2835F2835D53300460789 /* TFYSwiftExtension.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		36264E4C2831DDBF00FA15EC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				36264E552833198100FA15EC /* Date+Swiftpicker.swift */,
+				36D11025283376AB0068E67E /* TFYSwiftDatePickerView.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,8 +279,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = TFYSwift;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
+				ORGANIZATIONNAME = TFYSwift;
 				TargetAttributes = {
 					36264E0C2831DC8F00FA15EC = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -231,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D1103C283499C70068E67E /* TFYSwiftCityBundle.bundle in Resources */,
 				36264E1D2831DC9000FA15EC /* LaunchScreen.storyboard in Resources */,
 				36264E1A2831DC9000FA15EC /* Assets.xcassets in Resources */,
 				36264E182831DC8F00FA15EC /* Main.storyboard in Resources */,
@@ -258,9 +350,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36264E152831DC8F00FA15EC /* ViewController.swift in Sources */,
-				36264E112831DC8F00FA15EC /* AppDelegate.swift in Sources */,
-				36264E132831DC8F00FA15EC /* SceneDelegate.swift in Sources */,
+				36D1103A283499210068E67E /* TFYSwiftAddressModel.swift in Sources */,
+				36264E482831DCD900FA15EC /* ViewController.swift in Sources */,
+				36F283602835D53300460789 /* TFYSwiftExtension.swift in Sources */,
+				36264E502831E8A000FA15EC /* TFYSwiftTableViewCell.swift in Sources */,
+				36D1102828339FAB0068E67E /* TFYSwiftPickerShowBaseView.swift in Sources */,
+				36D1102A28348C430068E67E /* TFYSwiftAddressPickerView.swift in Sources */,
+				36264E472831DCD900FA15EC /* SceneDelegate.swift in Sources */,
+				36264E522831ED8400FA15EC /* TFYSwiftPickerBaseView.swift in Sources */,
+				36D11026283376AB0068E67E /* TFYSwiftDatePickerView.swift in Sources */,
+				36264E462831DCD900FA15EC /* AppDelegate.swift in Sources */,
+				36264E562833198100FA15EC /* Date+Swiftpicker.swift in Sources */,
+				36264E4E2831DE1700FA15EC /* TFYSwiftBaseMacro.swift in Sources */,
+				36264E542831FB9A00FA15EC /* TFYSwiftStringPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +542,13 @@
 				DEVELOPMENT_TEAM = W27SB687KJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TFYSwiftPickerView/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "多功能选择器";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,11 +572,13 @@
 				DEVELOPMENT_TEAM = W27SB687KJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TFYSwiftPickerView/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "多功能选择器";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
