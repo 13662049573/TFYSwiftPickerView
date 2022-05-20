@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum TFYSwiftStringPickerMode:Int {
+public enum TFYSwiftStringPickerMode:Int {
     case TFYSwiftStringPickerComponentSingle = 0
     case TFYSwiftStringPickerComponentMore = 1
 }
@@ -16,7 +16,7 @@ enum TFYSwiftStringPickerMode:Int {
 typealias resultBlock = (_ textselectValue: Any) -> Void
 typealias cancelBlock = () -> Void
 
-class TFYSwiftStringPickerView: TFYSwiftPickerBaseView {
+public class TFYSwiftStringPickerView: TFYSwiftPickerBaseView {
     
     var isDataSourceValid:Bool = false
     var isAutoSelect:Bool = false
@@ -39,7 +39,7 @@ class TFYSwiftStringPickerView: TFYSwiftPickerBaseView {
         return pickView
     }()
     
-    static func showStringPickerWithTitle(
+    public static func showStringPickerWithTitle(
         title:String,
         dataArr:Any,
         defaultSelValue:Any,
@@ -164,7 +164,7 @@ class TFYSwiftStringPickerView: TFYSwiftPickerBaseView {
 
 extension TFYSwiftStringPickerView:UIPickerViewDelegate,UIPickerViewDataSource {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch type {
         case .TFYSwiftStringPickerComponentSingle:
             return 1
@@ -173,7 +173,7 @@ extension TFYSwiftStringPickerView:UIPickerViewDelegate,UIPickerViewDataSource {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch type {
         case .TFYSwiftStringPickerComponentSingle:
             return dataSourceSingleArr.count
@@ -182,11 +182,11 @@ extension TFYSwiftStringPickerView:UIPickerViewDelegate,UIPickerViewDataSource {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return kPickerSliderHeight
     }
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         self.changeSpearatorLineColor(lineColor: kPickerBorderColor)
         var width:CGFloat = self.alertView.kPickerWidth
         if type == .TFYSwiftStringPickerComponentMore {
@@ -201,7 +201,7 @@ extension TFYSwiftStringPickerView:UIPickerViewDelegate,UIPickerViewDataSource {
         return pickView
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch type {
         case .TFYSwiftStringPickerComponentSingle:
             selectValue = dataSourceSingleArr[row]

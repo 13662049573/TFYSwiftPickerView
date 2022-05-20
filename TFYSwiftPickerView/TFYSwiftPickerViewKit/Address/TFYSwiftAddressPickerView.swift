@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum TFYSwiftAddressPickerMode:Int {
+public enum TFYSwiftAddressPickerMode:Int {
     /// 只显示省
     case  TFYSwiftAddressPickerModeProvince = 0
     /// 显示省市
@@ -20,7 +20,7 @@ enum TFYSwiftAddressPickerMode:Int {
 typealias addressResultBlock = (_ provinceModel: TFYSwiftAddressModel,_ cityModel:TFYSwiftCitylistModel,_ areaModel:TFYSwiftArealistModel) -> Void
 typealias addressCancelBlock = () -> Void
 
-class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
+public class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
 
     var addressResultBlock:addressResultBlock?
     var addressCancelBlock:addressCancelBlock?
@@ -51,7 +51,7 @@ class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
         return pickView
     }()
     
-    static func showAddressPickerWithTitle(showType:TFYSwiftAddressPickerMode = .TFYSwiftAddressPickerModeArea,
+    public static func showAddressPickerWithTitle(showType:TFYSwiftAddressPickerMode = .TFYSwiftAddressPickerModeArea,
                                            defaultSelected:[String],
                                            isAutoSelect:Bool,
                                            resultBlock:@escaping (_ provinceModel: TFYSwiftAddressModel,_ cityModel:TFYSwiftCitylistModel,_ areaModel:TFYSwiftArealistModel) -> Void,
@@ -264,7 +264,7 @@ class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
 }
 
 extension TFYSwiftAddressPickerView: UIPickerViewDelegate,UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch showType {
         case .TFYSwiftAddressPickerModeProvince:
             return 1
@@ -275,7 +275,7 @@ extension TFYSwiftAddressPickerView: UIPickerViewDelegate,UIPickerViewDataSource
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
             return provinceModelArr.count
         }
@@ -288,11 +288,11 @@ extension TFYSwiftAddressPickerView: UIPickerViewDelegate,UIPickerViewDataSource
         return 0
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return kPickerSliderHeight
     }
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         self.changeSpearatorLineColor(lineColor: kPickerBorderColor)
         let width:CGFloat = self.alertView.kPickerWidth/CGFloat(3)
         let pickView:TFYSwiftPickerShowBaseView = TFYSwiftPickerShowBaseView(frame: CGRect(x: 0, y: 0, width: width, height: 35))
@@ -306,7 +306,7 @@ extension TFYSwiftAddressPickerView: UIPickerViewDelegate,UIPickerViewDataSource
         return pickView
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
             provinceIndex = row
             switch showType {

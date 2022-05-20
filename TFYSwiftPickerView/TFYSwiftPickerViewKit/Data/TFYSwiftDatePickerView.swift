@@ -43,7 +43,7 @@ enum TFYSwiftDatePickerStyle:Int {
 typealias dateresultBlock = (_ textselectValue: String) -> Void
 typealias datecancelBlock = () -> Void
 
-class TFYSwiftDatePickerView: TFYSwiftPickerBaseView {
+public class TFYSwiftDatePickerView: TFYSwiftPickerBaseView {
     var dateresultBlock:dateresultBlock?
     var datecancelBlock:datecancelBlock?
     
@@ -101,7 +101,7 @@ class TFYSwiftDatePickerView: TFYSwiftPickerBaseView {
         return datePick
     }()
 
-    static func showDatePickerWithTitle(
+    public static func showDatePickerWithTitle(
         title:String,
         dateType:TFYSwiftDatePickerMode,
         defaultSelValue:String,
@@ -476,7 +476,7 @@ class TFYSwiftDatePickerView: TFYSwiftPickerBaseView {
 
 
 extension TFYSwiftDatePickerView:UIPickerViewDelegate,UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if self.showType == .TFYSwiftDatePickerModeYMDHMS {
             return 6
         } else if self.showType == .TFYSwiftDatePickerModeYMDHM {
@@ -497,7 +497,7 @@ extension TFYSwiftDatePickerView:UIPickerViewDelegate,UIPickerViewDataSource {
         return 0
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         var rowsArr:[Int] = []
         if self.showType == .TFYSwiftDatePickerModeYMDHMS {
             rowsArr = [yearArr.count,monthArr.count,dayArr.count,hourArr.count,minuteArr.count,secondArr.count]
@@ -519,18 +519,18 @@ extension TFYSwiftDatePickerView:UIPickerViewDelegate,UIPickerViewDataSource {
         return rowsArr[component]
     }
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         self.changeSpearatorLineColor(lineColor: kPickerBorderColor)
         let pickView:TFYSwiftPickerShowBaseView = TFYSwiftPickerShowBaseView(frame: CGRect(x: 0, y: 0, width: self.pickerWidth(), height: 35))
         pickView.title = self.setDateLabelText(component: component, row: row)
         return pickView
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return kPickerSliderHeight
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // 获取滚动后选择的日期
         selectDate = self.getDidSelectedDate(component: component, row: row)
         if isAutoSelect {
