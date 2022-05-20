@@ -22,6 +22,8 @@ public class TFYSwiftPickerBaseView: UIView {
     lazy var topView: UIView = {
         let tView = UIView(frame: CGRect(x: 0, y: 0, width: kPickerScrenWidth, height: kPickerTopViewHeight))
         tView.backgroundColor = kPickerTheneColor
+        tView.layer.borderColor = UIColor.kPickerhexString("e6e6e6").cgColor
+        tView.layer.borderWidth = 0.5
         return tView
     }()
     
@@ -66,13 +68,6 @@ public class TFYSwiftPickerBaseView: UIView {
         return lab
     }()
     
-    /// 分割线
-    lazy var lineView: UIView = {
-        let linV = UIView(frame: CGRect(x: 0, y: kPickerTopViewHeight-1, width: kPickerScrenWidth, height: 0.5))
-        linV.backgroundColor = UIColor.kPickerhexString("e6e6e6")
-        return linV
-    }()
-        
     func layoutUI() {
         self.frame = kPickerScrenBounds
         self.backgroundColor = UIColor.kPickerhexString("000000", alpha: 0.2)
@@ -86,7 +81,6 @@ public class TFYSwiftPickerBaseView: UIView {
         self.alertView.addSubview(self.leftBtn)
         self.alertView.addSubview(self.rightBtn)
         self.alertView.addSubview(self.titleLabel)
-        self.topView.addSubview(self.lineView)
     }
     
     /// 点击屏幕消失

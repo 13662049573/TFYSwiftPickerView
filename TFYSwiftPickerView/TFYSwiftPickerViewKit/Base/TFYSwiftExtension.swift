@@ -228,6 +228,7 @@ extension UIView {
 }
 
 extension UIColor {
+    
      static func kPickerhexString(_ hexString: String, alpha: CGFloat = 1) -> UIColor {
         var str = ""
         if hexString.lowercased().hasPrefix("0x") {
@@ -272,5 +273,20 @@ extension UIColor {
                        green: CGFloat(green) / 255.0,
                        blue: CGFloat(blue) / 255.0,
                        alpha: CGFloat(alpha))
+    }
+    
+    static func diabloDarkColor(light:UIColor,dark:UIColor) -> UIColor {
+        if #available(iOS 13, *) {
+            let color = UIColor.init { trainCollection -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return dark
+                } else {
+                    return light
+                }
+            }
+            return color
+        } else {
+            return light
+        }
     }
 }
