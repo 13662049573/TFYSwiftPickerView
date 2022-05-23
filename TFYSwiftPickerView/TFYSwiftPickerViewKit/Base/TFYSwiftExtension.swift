@@ -275,7 +275,7 @@ extension UIColor {
                        alpha: CGFloat(alpha))
     }
     
-    static func diabloDarkColor(light:UIColor,dark:UIColor) -> UIColor {
+    static func kPickerdiabloDarkColor(light:UIColor,dark:UIColor) -> UIColor {
         if #available(iOS 13, *) {
             let color = UIColor.init { trainCollection -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {

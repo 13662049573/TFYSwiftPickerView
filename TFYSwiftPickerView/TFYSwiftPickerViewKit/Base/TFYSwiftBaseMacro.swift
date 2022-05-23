@@ -12,15 +12,15 @@ let kPickerScrenWidth:CGFloat = UIScreen.main.bounds.width
 let kPickerScrenHeight:CGFloat = UIScreen.main.bounds.height
 let kPickerScrenBounds:CGRect = UIScreen.main.bounds
 /// 默认主题颜色
-let kPickerTheneColor:UIColor = UIColor.diabloDarkColor(light: UIColor.kPickerhexString("ffffff"), dark: UIColor.kPickerhexString("000000"))
+let kPickerTheneColor:UIColor = UIColor.kPickerdiabloDarkColor(light: UIColor.kPickerhexString("ffffff"), dark: UIColor.kPickerhexString("000000"))
 /// 默认背景颜色
-let kPickerTextColor:UIColor = UIColor.diabloDarkColor(light: UIColor.kPickerhexString("252525"), dark: UIColor.kPickerhexString("ffffff"))
+let kPickerTextColor:UIColor = UIColor.kPickerdiabloDarkColor(light: UIColor.kPickerhexString("252525"), dark: UIColor.kPickerhexString("ffffff"))
 /// 按钮边框颜色
-let kPickerBorderColor:UIColor = UIColor.diabloDarkColor(light: UIColor.kPickerhexString("e6e6e6"), dark: UIColor.kPickerhexString("ffffff"))
+let kPickerBorderColor:UIColor = UIColor.kPickerdiabloDarkColor(light: UIColor.kPickerhexString("e6e6e6"), dark: UIColor.kPickerhexString("ffffff"))
 /// 按钮弹出框颜色
-let kPickerShowColor:UIColor = UIColor.diabloDarkColor(light: UIColor.kPickerhexString("f7f7f7"), dark: UIColor.kPickerhexString("000000"))
+let kPickerShowColor:UIColor = UIColor.kPickerdiabloDarkColor(light: UIColor.kPickerhexString("f7f7f7"), dark: UIColor.kPickerhexString("000000"))
 /// 按钮背景框颜色
-let kPickerBackColor:UIColor = UIColor.diabloDarkColor(light: UIColor.kPickerhexString("f7f7f7"), dark: UIColor.kPickerhexString("000000"))
+let kPickerBackColor:UIColor = UIColor.kPickerdiabloDarkColor(light: UIColor.kPickerhexString("f7f7f7"), dark: UIColor.kPickerhexString("000000"))
 /// 默认弹出框高度
 let kPickerContentViewHeight:CGFloat = 265.0
 /// 容器圆角
