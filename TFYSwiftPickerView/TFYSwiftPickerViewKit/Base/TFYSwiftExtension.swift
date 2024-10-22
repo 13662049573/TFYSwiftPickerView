@@ -78,18 +78,12 @@ public extension String {
 
 extension UIWindow {
     static var kPickerkeyWindow: UIWindow? {
-        if #available(iOS 13, *) {
-            return UIApplication.shared.windows.first { $0.isKeyWindow }
-        } else {
-            if let window = UIApplication.shared.delegate?.window as? UIWindow {
-                return window
-            } else {
-                for window in UIApplication.shared.windows where window.windowLevel == .normal && !window.isHidden {
-                    return window
-                }
-                return UIApplication.shared.windows.first
-            }
-        }
+        var keyWindow:UIWindow?
+        keyWindow = UIApplication.shared.connectedScenes
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows.first
+        return keyWindow
     }
 }
 
