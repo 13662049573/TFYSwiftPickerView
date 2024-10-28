@@ -4,12 +4,12 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TFYSwiftPickerViewKit"
 
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
 
-  spec.summary      = "swift版选择器，最低支持ios 12 ,swift5"
+  spec.summary      = "swift版选择器，最低支持ios 14 ,swift5"
 
   spec.description  = <<-DESC
-  swift版选择器，最低支持ios 12 ,swift5
+  swift版选择器，最低支持ios 14 ,swift5
                    DESC
 
   spec.homepage     = "https://github.com/13662049573/TFYSwiftPickerView"
