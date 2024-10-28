@@ -35,7 +35,6 @@ public class TFYSwiftStringPickerView: TFYSwiftPickerBaseView {
         pickView.backgroundColor = kPickerTheneColor
         pickView.delegate = self
         pickView.dataSource = self
-        pickView.showsSelectionIndicator = true
         return pickView
     }()
     
