@@ -4,12 +4,12 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TFYSwiftPickerViewKit"
 
-  spec.version      = "1.0.5"
+  spec.version      = "1.0.6"
 
-  spec.summary      = "swift版选择器，最低支持ios 14 ,swift5"
+  spec.summary      = "swift版选择器，最低支持ios 15 ,swift5"
 
   spec.description  = <<-DESC
-  swift版选择器，最低支持ios 14 ,swift5
+  swift版选择器，最低支持ios 15 ,swift5
                    DESC
 
   spec.homepage     = "https://github.com/13662049573/TFYSwiftPickerView"
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   
   spec.author       = { "田风有" => "420144542@qq.com" }
   
-  spec.platform     = :ios, "14.0"
+  spec.platform     = :ios, "15.0"
 
   spec.swift_version = '5.0'
 
