@@ -66,11 +66,5 @@ Pod::Spec.new do |spec|
 
   # 需要ARC
   spec.requires_arc = true
-
-  # 支持的架构
-  spec.pod_target_xcconfig = { 
-    'SWIFT_VERSION' => '5.0',
-    'IPHONEOS_DEPLOYMENT_TARGET' => '15.0'
-  }
-
+  
 end
