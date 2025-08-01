@@ -83,9 +83,7 @@ Pod::Spec.new do |spec|
   # 支持的架构
   spec.pod_target_xcconfig = { 
     'SWIFT_VERSION' => '5.0',
-    'IPHONEOS_DEPLOYMENT_TARGET' => '15.0',
-    'VALID_ARCHS' => 'arm64 x86_64',
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+    'IPHONEOS_DEPLOYMENT_TARGET' => '15.0'
   }
 
 end
