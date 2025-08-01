@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TFYSwiftPickerViewKit"
 
-  spec.version      = "1.0.7"
+  spec.version      = "1.0.8"
 
   spec.summary      = "Swift版选择器，支持iOS 15+，Swift 5，包含字符串选择器、日期选择器、地址选择器，支持多语言"
 
