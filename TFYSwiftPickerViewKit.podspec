@@ -94,9 +94,6 @@ Pod::Spec.new do |spec|
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
 
-  # 用户配置
-  spec.user_target_xcconfig = { 
-    'IPHONEOS_DEPLOYMENT_TARGET' => '15.0'
-  }
+
 
 end
