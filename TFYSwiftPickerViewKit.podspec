@@ -35,34 +35,27 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/13662049573/TFYSwiftPickerView.git", :tag => spec.version }
 
-  # 默认包含所有子模块
-  spec.default_subspecs = 'Base'
-
   # 基础模块
   spec.subspec 'Base' do |ss|
     ss.source_files  = "TFYSwiftPickerView/TFYSwiftPickerViewKit/Base/*.{swift}"
-    ss.resources = "TFYSwiftPickerView/TFYSwiftPickerViewKit/TFYSwiftCityBundle.bundle"
   end
 
   # 地址选择器模块
   spec.subspec 'Address' do |ss|
     ss.source_files  = "TFYSwiftPickerView/TFYSwiftPickerViewKit/Address/*.{swift}"
     ss.dependency "TFYSwiftPickerViewKit/Base"
-    ss.resources = "TFYSwiftPickerView/TFYSwiftPickerViewKit/TFYSwiftCityBundle.bundle"
   end
 
   # 日期选择器模块
   spec.subspec 'Data' do |ss|
     ss.source_files  = "TFYSwiftPickerView/TFYSwiftPickerViewKit/Data/*.{swift}"
     ss.dependency "TFYSwiftPickerViewKit/Base"
-    ss.resources = "TFYSwiftPickerView/TFYSwiftPickerViewKit/TFYSwiftCityBundle.bundle"
   end
 
   # 字符串选择器模块
   spec.subspec 'String' do |ss|
     ss.source_files  = "TFYSwiftPickerView/TFYSwiftPickerViewKit/String/*.{swift}"
     ss.dependency "TFYSwiftPickerViewKit/Base"
-    ss.resources = "TFYSwiftPickerView/TFYSwiftPickerViewKit/TFYSwiftCityBundle.bundle"
   end
 
   # 资源文件
