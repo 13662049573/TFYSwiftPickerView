@@ -38,12 +38,6 @@ Pod::Spec.new do |spec|
   # 默认包含所有子模块
   spec.default_subspecs = 'Core'
 
-  # 核心模块
-  spec.subspec 'Core' do |ss|
-    ss.source_files  = "TFYSwiftPickerView/TFYSwiftPickerViewKit/Base/*.{swift}"
-    ss.resources = "TFYSwiftPickerView/TFYSwiftPickerViewKit/TFYSwiftCityBundle.bundle"
-  end
-
   # 基础模块
   spec.subspec 'Base' do |ss|
     ss.source_files  = "TFYSwiftPickerView/TFYSwiftPickerViewKit/Base/*.{swift}"
