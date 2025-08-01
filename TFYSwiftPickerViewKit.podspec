@@ -33,8 +33,6 @@ Pod::Spec.new do |spec|
 
   spec.swift_version = '5.0'
 
-
-
   spec.source       = { :git => "https://github.com/13662049573/TFYSwiftPickerView.git", :tag => spec.version }
 
   # 默认包含所有子模块
@@ -89,7 +87,5 @@ Pod::Spec.new do |spec|
     'VALID_ARCHS' => 'arm64 x86_64',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-
-
 
 end
