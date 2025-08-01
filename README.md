@@ -458,10 +458,10 @@ PickerColors.maskBackground
 我们欢迎所有形式的贡献！
 
 ### 🐛 报告问题
-如果你发现了 bug，请创建一个 [Issue](https://github.com/your-repo/TFYSwiftPickerView/issues)。
+如果你发现了 bug，请创建一个 [Issue](https://github.com/13662049573/TFYSwiftPickerView/issues)。
 
 ### 💡 功能建议
-如果你有新的功能建议，请创建一个 [Issue](https://github.com/your-repo/TFYSwiftPickerView/issues) 并标记为 `enhancement`。
+如果你有新的功能建议，请创建一个 [Issue](https://github.com/13662049573/TFYSwiftPickerView/issues) 并标记为 `enhancement`。
 
 ### 🔧 代码贡献
 1. Fork 这个仓库
