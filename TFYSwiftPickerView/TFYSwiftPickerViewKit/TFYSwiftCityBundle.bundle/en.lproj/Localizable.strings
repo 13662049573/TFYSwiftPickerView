@@ -1,0 +1,61 @@
+// TFYSwiftPickerView English Language Pack
+
+// Common Buttons
+"cancel" = "Cancel";
+"confirm" = "Confirm";
+"done" = "Done";
+
+// Address Picker
+"select_province" = "Select Province";
+"select_city" = "Select City";
+"select_area" = "Select Area";
+
+// String Picker
+"select_gender" = "Select Gender";
+"select_option" = "Select Option";
+
+// Date Picker
+"select_date" = "Select Date";
+"select_time" = "Select Time";
+"select_datetime" = "Select Date & Time";
+"select_countdown" = "Select Countdown";
+
+// Year, Month, Date
+"year" = "Year";
+"month" = "Month";
+"day" = "Day";
+"hour" = "Hour";
+"minute" = "Minute";
+"second" = "Second";
+
+// Demo Text
+"string_picker_demo" = "String Picker";
+"multiple_picker_demo" = "Multiple Picker";
+"time_picker_demo" = "Time Picker";
+"date_picker_demo" = "Date Picker";
+"datetime_picker_demo" = "Date & Time Picker";
+"countdown_picker_demo" = "Countdown Picker";
+"full_datetime_picker_demo" = "Full Date & Time Picker";
+"ymdhm_picker_demo" = "Year-Month-Day-Hour-Minute Picker";
+"mdhm_picker_demo" = "Month-Day-Hour-Minute Picker";
+"ymd_picker_demo" = "Year-Month-Day Picker";
+"ym_picker_demo" = "Year-Month Picker";
+"year_picker_demo" = "Year Picker";
+"md_picker_demo" = "Month-Day Picker";
+"hm_picker_demo" = "Hour-Minute Picker";
+"range_date_picker_demo" = "Range Date Picker";
+"province_picker_demo" = "Province Picker";
+"city_picker_demo" = "City Picker";
+"area_picker_demo" = "Area Picker";
+"default_address_picker_demo" = "Default Address Picker";
+"auto_select_demo" = "Auto Select Mode";
+
+// Result Messages
+"user_cancelled" = "User Cancelled";
+"selected" = "Selected";
+
+// Settings
+"settings" = "Settings";
+"dark_mode" = "Dark Mode";
+"reset_theme" = "Reset Theme";
+"picker_config_options" = "Picker Configuration Options"; 

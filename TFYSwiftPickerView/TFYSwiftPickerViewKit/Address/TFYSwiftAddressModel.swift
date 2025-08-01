@@ -9,47 +9,102 @@
 import UIKit
 import Foundation
 
-public class TFYSwiftAddressModel: NSObject {
-    var code:String = ""
-    var name:String = ""
-    var index:Int = 0
-    var citylist:[TFYSwiftCitylistModel]?
+@available(iOS 15.0, *)
+public class TFYSwiftAddressModel: NSObject, Codable {
+    public var code: String = ""
+    public var name: String = ""
+    public var index: Int = 0
+    public var citylist: [TFYSwiftCitylistModel]?
+    
+    public override init() {
+        super.init()
+    }
+    
+    public init(code: String, name: String, index: Int = 0) {
+        self.code = code
+        self.name = name
+        self.index = index
+        super.init()
+    }
 }
 
-public class TFYSwiftCitylistModel: NSObject {
-    var code:String = ""
-    var name:String = ""
-    var index:Int = 0
-    var arealist:[TFYSwiftArealistModel]?
+@available(iOS 15.0, *)
+public class TFYSwiftCitylistModel: NSObject, Codable {
+    public var code: String = ""
+    public var name: String = ""
+    public var index: Int = 0
+    public var arealist: [TFYSwiftArealistModel]?
+    
+    public override init() {
+        super.init()
+    }
+    
+    public init(code: String, name: String, index: Int = 0) {
+        self.code = code
+        self.name = name
+        self.index = index
+        super.init()
+    }
 }
 
-public class TFYSwiftArealistModel: NSObject {
-    var code:String = ""
-    var name:String = ""
-    var index:Int = 0
+@available(iOS 15.0, *)
+public class TFYSwiftArealistModel: NSObject, Codable {
+    public var code: String = ""
+    public var name: String = ""
+    public var index: Int = 0
+    
+    public override init() {
+        super.init()
+    }
+    
+    public init(code: String, name: String, index: Int = 0) {
+        self.code = code
+        self.name = name
+        self.index = index
+        super.init()
+    }
 }
 
-public func getBundleResource(bundName: String, resourceName: String, ofType ext: String?) -> String? {
-    let resourcePath = "\(bundName)"
-    guard let bundlePath = Bundle.main.path(forResource: resourcePath, ofType: "bundle"), let bundle = Bundle(path: bundlePath) else {
+// MARK: - Bundle Resource Helper
+@available(iOS 15.0, *)
+public func getBundleResource(bundleName: String, resourceName: String, ofType ext: String?) -> String? {
+    let resourcePath = bundleName
+    guard let bundlePath = Bundle.main.path(forResource: resourcePath, ofType: "bundle"),
+          let bundle = Bundle(path: bundlePath) else {
         return nil
     }
-    let imageStr = bundle.path(forResource: resourceName, ofType: ext)
-    return imageStr
+    return bundle.path(forResource: resourceName, ofType: ext)
 }
 
-// MARK: 读取本地json文件
-public func kPickerGetJSON(name:String) -> [[String:Any]] {
-    let path = getBundleResource(bundName: "TFYSwiftCityBundle", resourceName: name, ofType: "json")
-    let url = URL(fileURLWithPath: path!)
+// MARK: - JSON Helper
+@available(iOS 15.0, *)
+public func loadJSONData(name: String) -> [[String: Any]] {
+    guard let path = getBundleResource(bundleName: "TFYSwiftCityBundle", resourceName: name, ofType: "json"),
+          let url = URL(string: "file://" + path) else {
+        print("Failed to find JSON file: \(name)")
+        return []
+    }
+    
     do {
         let data = try Data(contentsOf: url)
         let jsonString = String(data: data, encoding: .utf8)
-        let jsonObject:[[String:Any]] = try JSONSerialization.jsonObject(with: jsonString!.data(using: String.Encoding.utf8)!, options: .allowFragments) as! [[String:Any]]
-        return jsonObject
-    } catch _ as Error? {
-        print("读取本地数据出现错误!")
-        return [[String:Any]]()
+        
+        guard let jsonData = jsonString?.data(using: .utf8) else {
+            print("Failed to convert JSON string to data")
+            return []
+        }
+        
+        let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [[String: Any]]
+        return jsonObject ?? []
+    } catch {
+        print("Error reading JSON data: \(error.localizedDescription)")
+        return []
     }
+}
+
+// MARK: - Legacy Support
+@available(iOS 15.0, *)
+public func kPickerGetJSON(name: String) -> [[String: Any]] {
+    return loadJSONData(name: name)
 }
 

@@ -27,6 +27,8 @@
 		36D1103A283499210068E67E /* TFYSwiftAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D11039283499210068E67E /* TFYSwiftAddressModel.swift */; };
 		36D1103C283499C70068E67E /* TFYSwiftCityBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36D1103B283499C70068E67E /* TFYSwiftCityBundle.bundle */; };
 		36F283602835D53300460789 /* TFYSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F2835F2835D53300460789 /* TFYSwiftExtension.swift */; };
+		84B8C37C2E3C88C800E1D6E8 /* TFYSwiftStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8C37B2E3C88C800E1D6E8 /* TFYSwiftStringExtension.swift */; };
+		84B8C37D2E3C88C800E1D6E8 /* TFYSwiftLocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8C37A2E3C88C800E1D6E8 /* TFYSwiftLocalizationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		36264E0D2831DC8F00FA15EC /* TFYSwiftPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFYSwiftPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		36264E172831DC8F00FA15EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+
 		36264E192831DC9000FA15EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36264E1C2831DC9000FA15EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36264E1E2831DC9000FA15EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +73,8 @@
 		36D11039283499210068E67E /* TFYSwiftAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftAddressModel.swift; sourceTree = "<group>"; };
 		36D1103B283499C70068E67E /* TFYSwiftCityBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TFYSwiftCityBundle.bundle; sourceTree = "<group>"; };
 		36F2835F2835D53300460789 /* TFYSwiftExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftExtension.swift; sourceTree = "<group>"; };
+		84B8C37A2E3C88C800E1D6E8 /* TFYSwiftLocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftLocalizationManager.swift; sourceTree = "<group>"; };
+		84B8C37B2E3C88C800E1D6E8 /* TFYSwiftStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFYSwiftStringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,7 @@
 				36264E412831DCD800FA15EC /* AppDelegate */,
 				36264E442831DCD900FA15EC /* Classs */,
 				36264E402831DCD800FA15EC /* TFYSwiftPickerViewKit */,
-				36264E162831DC8F00FA15EC /* Main.storyboard */,
+
 				36264E192831DC9000FA15EC /* Assets.xcassets */,
 				36264E1B2831DC9000FA15EC /* LaunchScreen.storyboard */,
 				36264E1E2831DC9000FA15EC /* Info.plist */,
@@ -199,6 +203,8 @@
 		36264E4B2831DDBF00FA15EC /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				84B8C37A2E3C88C800E1D6E8 /* TFYSwiftLocalizationManager.swift */,
+				84B8C37B2E3C88C800E1D6E8 /* TFYSwiftStringExtension.swift */,
 				36264E4D2831DE1700FA15EC /* TFYSwiftBaseMacro.swift */,
 				36264E512831ED8400FA15EC /* TFYSwiftPickerBaseView.swift */,
 				36D1102728339FAB0068E67E /* TFYSwiftPickerShowBaseView.swift */,
@@ -325,7 +331,7 @@
 				36D1103C283499C70068E67E /* TFYSwiftCityBundle.bundle in Resources */,
 				36264E1D2831DC9000FA15EC /* LaunchScreen.storyboard in Resources */,
 				36264E1A2831DC9000FA15EC /* Assets.xcassets in Resources */,
-				36264E182831DC8F00FA15EC /* Main.storyboard in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +368,8 @@
 				36264E462831DCD900FA15EC /* AppDelegate.swift in Sources */,
 				36264E562833198100FA15EC /* Date+Swiftpicker.swift in Sources */,
 				36264E4E2831DE1700FA15EC /* TFYSwiftBaseMacro.swift in Sources */,
+				84B8C37C2E3C88C800E1D6E8 /* TFYSwiftStringExtension.swift in Sources */,
+				84B8C37D2E3C88C800E1D6E8 /* TFYSwiftLocalizationManager.swift in Sources */,
 				36264E542831FB9A00FA15EC /* TFYSwiftStringPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,14 +407,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		36264E162831DC8F00FA15EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36264E172831DC8F00FA15EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		36264E1B2831DC9000FA15EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -549,10 +549,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "多功能选择器";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -579,10 +578,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "多功能选择器";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,7 +602,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W27SB687KJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -623,7 +621,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W27SB687KJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -641,6 +639,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W27SB687KJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -658,6 +657,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W27SB687KJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zh.ECTSESwift.company.TFYSwiftPickerViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

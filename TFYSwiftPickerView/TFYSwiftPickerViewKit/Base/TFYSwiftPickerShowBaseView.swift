@@ -8,30 +8,78 @@
 
 import UIKit
 
+@available(iOS 15.0, *)
 public class TFYSwiftPickerShowBaseView: UIView {
-
-    var title:String = "" {
-        didSet {
-            let name = title
-            self.titleLabel.text = name
-        }
-    }
     
-    lazy var titleLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.kPickerWidth, height: self.kPickerHeight))
-        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        label.textColor = kPickerTextColor
+    // MARK: - Properties
+    private var title: String = ""
+    
+    // MARK: - UI Components
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.body(size: PickerLayout.adjustedSize(for: 15), weight: .semibold)
+        label.textColor = PickerColors.text
         label.textAlignment = .center
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.8
         return label
     }()
     
-    override init(frame: CGRect) {
+    // MARK: - Initialization
+    public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(titleLabel)
+        setupUI()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupUI()
+        setupConstraints()
     }
-
+    
+    // MARK: - Setup Methods
+    private func setupUI() {
+        addSubview(titleLabel)
+        
+        // 使用frame布局
+        titleLabel.frame = bounds
+    }
+    
+    private func setupConstraints() {
+        // 使用frame布局，不需要Auto Layout约束
+    }
+    
+    // MARK: - Public Methods
+    /// 设置标题
+    public func setTitle(_ title: String) {
+        self.title = title
+        titleLabel.text = title
+    }
+    
+    /// 获取当前标题
+    public func getTitle() -> String {
+        return title
+    }
+    
+    /// 设置标题字体
+    public func setTitleFont(_ font: UIFont) {
+        titleLabel.font = font
+    }
+    
+    /// 设置标题颜色
+    public func setTitleColor(_ color: UIColor) {
+        titleLabel.textColor = color
+    }
+    
+    /// 设置文本对齐方式
+    public func setTextAlignment(_ alignment: NSTextAlignment) {
+        titleLabel.textAlignment = alignment
+    }
+    
+    // MARK: - Legacy Support
+    public var legacyTitleLabel: UILabel {
+        return self.titleLabel
+    }
 }
