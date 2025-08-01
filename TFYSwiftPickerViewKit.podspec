@@ -91,8 +91,7 @@ Pod::Spec.new do |spec|
   # 文档链接
   spec.documentation_url = "https://github.com/13662049573/TFYSwiftPickerView"
 
-  # 关键词
-  spec.keywords = "swift", "picker", "picker-view", "date-picker", "address-picker", "string-picker", "localization", "multi-language", "ios15", "swift5"
+
 
   # 支持的架构
   spec.pod_target_xcconfig = { 
