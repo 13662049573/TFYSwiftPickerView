@@ -36,7 +36,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/13662049573/TFYSwiftPickerView.git", :tag => spec.version }
 
   # 默认包含所有子模块
-  spec.default_subspecs = 'Core'
+  spec.default_subspecs = 'Base'
 
   # 基础模块
   spec.subspec 'Base' do |ss|
