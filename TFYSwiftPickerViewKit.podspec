@@ -33,10 +33,7 @@ Pod::Spec.new do |spec|
 
   spec.swift_version = '5.0'
 
-  spec.pod_target_xcconfig = { 
-    'SWIFT_VERSION' => '5.0',
-    'IPHONEOS_DEPLOYMENT_TARGET' => '15.0'
-  }
+
 
   spec.source       = { :git => "https://github.com/13662049573/TFYSwiftPickerView.git", :tag => spec.version }
 
@@ -85,11 +82,7 @@ Pod::Spec.new do |spec|
   # 需要ARC
   spec.requires_arc = true
 
-  # 社交媒体链接
-  spec.social_media_url = "https://github.com/13662049573/TFYSwiftPickerView"
 
-  # 文档链接
-  spec.documentation_url = "https://github.com/13662049573/TFYSwiftPickerView"
 
 
 
