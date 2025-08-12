@@ -8,85 +8,111 @@
 
 import UIKit
 
-public enum TFYSwiftAddressPickerMode:Int {
+@available(iOS 15.0, *)
+public enum TFYSwiftAddressPickerMode: Int, CaseIterable {
     /// 只显示省
-    case  TFYSwiftAddressPickerModeProvince = 0
+    case province = 0
     /// 显示省市
-    case TFYSwiftAddressPickerModeCity = 1
+    case city = 1
     /// 显示省市区（默认）
-    case TFYSwiftAddressPickerModeArea = 2
+    case area = 2
+    
+    var title: String {
+        switch self {
+        case .province:
+            return "select_province".localized
+        case .city:
+            return "select_city".localized
+        case .area:
+            return "select_area".localized
+        }
+    }
 }
 
-typealias addressResultBlock = (_ provinceModel: TFYSwiftAddressModel,_ cityModel:TFYSwiftCitylistModel,_ areaModel:TFYSwiftArealistModel) -> Void
-typealias addressCancelBlock = () -> Void
+@available(iOS 15.0, *)
+public typealias AddressPickerResultBlock = (_ province: TFYSwiftAddressModel, _ city: TFYSwiftCitylistModel, _ area: TFYSwiftArealistModel) -> Void
+@available(iOS 15.0, *)
+public typealias AddressPickerCancelBlock = () -> Void
 
+@available(iOS 15.0, *)
 public class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
-
-    var addressResultBlock:addressResultBlock?
-    var addressCancelBlock:addressCancelBlock?
-    var isDataSourceValid:Bool = false
-    var isAutoSelect:Bool = false
-    var provinceIndex:Int = 0
-    var cityIndex:Int = 0
-    var areaIndex:Int = 0
-    var selectProvinceModel:TFYSwiftAddressModel = TFYSwiftAddressModel()
-    var selectCityModel:TFYSwiftCitylistModel = TFYSwiftCitylistModel()
-    var selectAreaModel:TFYSwiftArealistModel = TFYSwiftArealistModel()
     
-    var provinceModelArr:[TFYSwiftAddressModel] = []
-    var cityModelArr:[TFYSwiftCitylistModel] = []
-    var areaModelArr:[TFYSwiftArealistModel] = []
+    // MARK: - Properties
+    private var resultBlock: AddressPickerResultBlock?
+    private var cancelBlock: AddressPickerCancelBlock?
+    private var isDataSourceValid: Bool = false
+    private var isAutoSelect: Bool = false
+    private var mode: TFYSwiftAddressPickerMode = .area
     
-    var showType:TFYSwiftAddressPickerMode = .TFYSwiftAddressPickerModeArea
+    // 索引
+    private var provinceIndex: Int = 0
+    private var cityIndex: Int = 0
+    private var areaIndex: Int = 0
     
+    // 选中的模型
+    private var selectedProvince: TFYSwiftAddressModel = TFYSwiftAddressModel()
+    private var selectedCity: TFYSwiftCitylistModel = TFYSwiftCitylistModel()
+    private var selectedArea: TFYSwiftArealistModel = TFYSwiftArealistModel()
     
-    var defaultSelectedArr:[String]? = []
+    // 数据数组
+    private var provinceArray: [TFYSwiftAddressModel] = []
+    private var cityArray: [TFYSwiftCitylistModel] = []
+    private var areaArray: [TFYSwiftArealistModel] = []
     
-    lazy var pickerView: UIPickerView = {
-        let pickView = UIPickerView(frame: CGRect(x: 0, y: kPickerTopViewHeight+0.5, width: self.alertView.kPickerWidth, height: self.alertView.kPickerHeight-kPickerTopViewHeight))
-        pickView.backgroundColor = kPickerTheneColor
-        pickView.delegate = self
-        pickView.dataSource = self
-        return pickView
+    // 默认选中值
+    private var defaultSelectedArray: [String] = []
+    
+    // MARK: - UI Components
+    private lazy var pickerView: UIPickerView = {
+        let picker = UIPickerView()
+        picker.backgroundColor = PickerColors.theme
+        picker.delegate = self
+        picker.dataSource = self
+        return picker
     }()
     
-    public static func showAddressPickerWithTitle(showType:TFYSwiftAddressPickerMode = .TFYSwiftAddressPickerModeArea,
-                                           defaultSelected:[String],
-                                           isAutoSelect:Bool,
-                                           resultBlock:@escaping (_ provinceModel: TFYSwiftAddressModel,_ cityModel:TFYSwiftCitylistModel,_ areaModel:TFYSwiftArealistModel) -> Void,
-                                           cancelBlock:@escaping () ->Void) {
-        let addressView:TFYSwiftAddressPickerView = TFYSwiftAddressPickerView(showType: showType, defaultSelected: defaultSelected, isAutoSelect: isAutoSelect, resultBlock: resultBlock, cancelBlock: cancelBlock)
-        if addressView.isDataSourceValid {
-            addressView.showWithAnimation()
+    // MARK: - Public Methods
+    public static func show(
+        mode: TFYSwiftAddressPickerMode = .area,
+        defaultSelected: [String] = [],
+        isAutoSelect: Bool = false,
+        result: @escaping AddressPickerResultBlock,
+        cancel: @escaping AddressPickerCancelBlock
+    ) {
+        let pickerView = TFYSwiftAddressPickerView(
+            mode: mode,
+            defaultSelected: defaultSelected,
+            isAutoSelect: isAutoSelect,
+            result: result,
+            cancel: cancel
+        )
+        
+        if pickerView.isDataSourceValid {
+            pickerView.show(animated: true)
         }
     }
     
-    init(
-        showType:TFYSwiftAddressPickerMode = .TFYSwiftAddressPickerModeArea,
-        defaultSelected:[String],
-        isAutoSelect:Bool,
-        resultBlock:@escaping (_ provinceModel: TFYSwiftAddressModel,_ cityModel:TFYSwiftCitylistModel,_ areaModel:TFYSwiftArealistModel) -> Void,
-        cancelBlock:@escaping () ->Void) {
-            super.init(frame: CGRect.zero)
-            
+    // MARK: - Initialization
+    private init(
+        mode: TFYSwiftAddressPickerMode,
+        defaultSelected: [String],
+        isAutoSelect: Bool,
+        result: @escaping AddressPickerResultBlock,
+        cancel: @escaping AddressPickerCancelBlock
+    ) {
+        super.init(frame: .zero)
+        
+        self.mode = mode
         self.isAutoSelect = isAutoSelect
-        self.addressResultBlock = resultBlock
-        self.addressCancelBlock = cancelBlock
+        self.resultBlock = result
+        self.cancelBlock = cancel
+        self.defaultSelectedArray = defaultSelected
         self.isDataSourceValid = true
-        self.defaultSelectedArr = defaultSelected
-        self.showType = showType
-        self.loadData()
-            
+        
+        loadData()
+        
         if isDataSourceValid {
-            self.layoutUI()
-            if showType == .TFYSwiftAddressPickerModeProvince {
-                self.titleLabel.text = "请选择省份"
-            } else if showType == .TFYSwiftAddressPickerModeCity {
-                self.titleLabel.text = "请选择城市"
-            } else {
-                self.titleLabel.text = "请选择地区"
-            }
-            self.alertView.addSubview(self.pickerView)
+            setupUI()
         }
     }
     
@@ -94,265 +120,379 @@ public class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func didTapBackgroundView() {
-        super.didTapBackgroundView()
-        if (addressCancelBlock != nil) {
-            addressCancelBlock!()
-        }
-    }
-    
-    override func clickLeftBtn() {
-        super.clickLeftBtn()
-        if (addressCancelBlock != nil) {
-            addressCancelBlock!()
-        }
-    }
-    
-    override func clickRightBtn() {
-        super.clickRightBtn()
-        if (addressResultBlock != nil) {
-            addressResultBlock!(selectProvinceModel,selectCityModel,selectAreaModel)
-        }
-    }
-    
+    // MARK: - Setup Methods
     private func loadData() {
-        let dataArr:[[String:Any]] = kPickerGetJSON(name: "TFYSwiftCityData")
-        isDataSourceValid = (dataArr.count == 0) ? false : true
-        var provinceModelArr:[TFYSwiftAddressModel] = []
-        for (index , itemDict) in dataArr.enumerated() {
-            let proviveModel:TFYSwiftAddressModel = TFYSwiftAddressModel()
-            proviveModel.code = itemDict["code"] as! String
-            proviveModel.name = itemDict["name"] as! String
-            proviveModel.index = index
-            var cityModelArr:[TFYSwiftCitylistModel] = []
-            let citylist:[[String:Any]] = itemDict["citylist"] as! [[String:Any]]
-            for (index2 , itemDict2) in citylist.enumerated() {
-                let cityModel:TFYSwiftCitylistModel = TFYSwiftCitylistModel()
-                cityModel.code = itemDict2["code"] as! String
-                cityModel.name = itemDict2["name"] as! String
-                cityModel.index = index2
-                var areaModelArr:[TFYSwiftArealistModel] = []
-                let arealist:[[String:Any]] = itemDict2["arealist"] as! [[String:Any]]
-                for (index3 , itemDict3) in arealist.enumerated() {
-                    let areaModel:TFYSwiftArealistModel = TFYSwiftArealistModel()
-                    areaModel.code = itemDict3["code"] as! String
-                    areaModel.name = itemDict3["name"] as! String
-                    areaModel.index = index3
-                    areaModelArr.append(areaModel)
-                }
-                cityModel.arealist = areaModelArr
-                cityModelArr.append(cityModel)
-            }
-            proviveModel.citylist = cityModelArr
-            provinceModelArr.append(proviveModel)
-        }
-        self.provinceModelArr = provinceModelArr
+        let dataArray = loadJSONData(name: "TFYSwiftCityData")
+        isDataSourceValid = !dataArray.isEmpty
         
-        self.setupDefaultValue(dataArr: provinceModelArr)
+        guard isDataSourceValid else { return }
         
-        self.scrollToRow(provinceIndex: provinceIndex, cityIndex: cityIndex, areaIndex: areaIndex)
+        provinceArray = parseProvinceData(dataArray)
+        setupDefaultValues()
+        scrollToSelectedRow()
     }
     
-    /// 设置默认值
-    private func setupDefaultValue(dataArr:[TFYSwiftAddressModel]) {
-        var selectProvinceName:String = ""
-        var selectCityName:String = ""
-        var selectAreaName:String = ""
-        if defaultSelectedArr != nil {
-            if defaultSelectedArr!.count > 0 {
-                selectProvinceName = defaultSelectedArr!.first!
-            }
-            if defaultSelectedArr!.count > 1 {
-                selectCityName = defaultSelectedArr![1]
-            }
-            if defaultSelectedArr!.count > 2 {
-                selectAreaName = defaultSelectedArr!.last!
-            }
-        }
+    private func parseProvinceData(_ dataArray: [[String: Any]]) -> [TFYSwiftAddressModel] {
+        var provinces: [TFYSwiftAddressModel] = []
         
-        for (idx , obj) in dataArr.enumerated() {
-            let model:TFYSwiftAddressModel = obj
-            if model.name.contains(selectProvinceName) {
-                provinceIndex = idx
-                selectProvinceModel = model
-                break
-            } else {
-                if idx == provinceModelArr.count - 1 {
-                    provinceIndex = 0
-                    selectProvinceModel = dataArr.first!
-                }
-            }
-        }
-        
-        if showType == .TFYSwiftAddressPickerModeCity || showType == .TFYSwiftAddressPickerModeArea {
-            cityModelArr = self.getCityModelArray(provinceIndex: provinceIndex)
-            for (idx,obj) in cityModelArr.enumerated() {
-                let cityModel:TFYSwiftCitylistModel = obj
-                if cityModel.name.contains(selectCityName) {
-                    cityIndex = idx
-                    selectCityModel = cityModel
-                    break
-                } else {
-                    if idx == cityModelArr.count - 1 {
-                        cityIndex = 0
-                        selectCityModel = cityModelArr.first!
+        for (index, provinceDict) in dataArray.enumerated() {
+            let province = TFYSwiftAddressModel(
+                code: provinceDict["code"] as? String ?? "",
+                name: provinceDict["name"] as? String ?? "",
+                index: index
+            )
+            
+            // 解析城市数据
+            if let cityList = provinceDict["citylist"] as? [[String: Any]] {
+                var cities: [TFYSwiftCitylistModel] = []
+                
+                for (cityIndex, cityDict) in cityList.enumerated() {
+                    let city = TFYSwiftCitylistModel(
+                        code: cityDict["code"] as? String ?? "",
+                        name: cityDict["name"] as? String ?? "",
+                        index: cityIndex
+                    )
+                    
+                    // 解析区域数据
+                    if let areaList = cityDict["arealist"] as? [[String: Any]] {
+                        var areas: [TFYSwiftArealistModel] = []
+                        
+                        for (areaIndex, areaDict) in areaList.enumerated() {
+                            let area = TFYSwiftArealistModel(
+                                code: areaDict["code"] as? String ?? "",
+                                name: areaDict["name"] as? String ?? "",
+                                index: areaIndex
+                            )
+                            areas.append(area)
+                        }
+                        
+                        city.arealist = areas
                     }
+                    
+                    cities.append(city)
                 }
+                
+                province.citylist = cities
+            }
+            
+            provinces.append(province)
+        }
+        
+        return provinces
+    }
+    
+    private func setupDefaultValues() {
+        var selectedProvinceName = ""
+        var selectedCityName = ""
+        var selectedAreaName = ""
+        
+        if !defaultSelectedArray.isEmpty {
+            if defaultSelectedArray.count > 0 {
+                selectedProvinceName = defaultSelectedArray[0]
+            }
+            if defaultSelectedArray.count > 1 {
+                selectedCityName = defaultSelectedArray[1]
+            }
+            if defaultSelectedArray.count > 2 {
+                selectedAreaName = defaultSelectedArray[2]
             }
         }
         
-        if showType == .TFYSwiftAddressPickerModeArea {
-            areaModelArr = self.getAreaModelArray(provinceIndex: provinceIndex, cityIndex: cityIndex)
-            for (idx,obj) in areaModelArr.enumerated() {
-                let areaModel:TFYSwiftArealistModel = obj
-                if areaModel.name.contains(selectAreaName) {
-                    areaIndex = idx
-                    selectAreaModel = areaModel
-                    break
-                } else {
-                    if idx == cityModelArr.count - 1 {
-                        areaIndex = 0
-                        selectAreaModel = areaModelArr.first!
-                    }
-                }
-            }
+        // 设置默认省份
+        if let provinceIndex = provinceArray.firstIndex(where: { $0.name.contains(selectedProvinceName) }) {
+            self.provinceIndex = provinceIndex
+            selectedProvince = provinceArray[provinceIndex]
+        } else {
+            selectedProvince = provinceArray.first ?? TFYSwiftAddressModel()
         }
-    }
-    
-    /// 根据 省索引 获取 城市模型数组
-    private func getCityModelArray(provinceIndex:Int) -> [TFYSwiftCitylistModel] {
-        let provinceModel:TFYSwiftAddressModel = provinceModelArr[provinceIndex]
-        return provinceModel.citylist!
-    }
-    
-    /// 根据 省索引和城市索引 获取 区域模型数组
-    private func getAreaModelArray(provinceIndex:Int,cityIndex:Int) -> [TFYSwiftArealistModel] {
-        let provinceModel:TFYSwiftAddressModel = provinceModelArr[provinceIndex]
-        let cityModel:TFYSwiftCitylistModel = provinceModel.citylist![cityIndex]
-        return cityModel.arealist!
-    }
-    
-    /// 滚动到指定行
-    private func scrollToRow(provinceIndex:Int,cityIndex:Int,areaIndex:Int) {
-        if showType == .TFYSwiftAddressPickerModeProvince {
-            self.pickerView.selectRow(provinceIndex, inComponent: 0, animated: true)
-        } else if showType == .TFYSwiftAddressPickerModeCity {
-            self.pickerView.selectRow(provinceIndex, inComponent: 0, animated: true)
-            self.pickerView.selectRow(cityIndex, inComponent: 1, animated: true)
-        } else if showType == .TFYSwiftAddressPickerModeArea {
-            self.pickerView.selectRow(provinceIndex, inComponent: 0, animated: true)
-            self.pickerView.selectRow(cityIndex, inComponent: 1, animated: true)
-            self.pickerView.selectRow(areaIndex, inComponent: 2, animated: true)
-        }
-    }
-    
-   private func changeSpearatorLineColor(lineColor:UIColor) {
-        self.pickerView.subviews.forEach { speartorView in
-            if speartorView.kPickerHeight < kPickerTopViewHeight {
-                speartorView.backgroundColor = .clear
-                speartorView.layer.borderWidth = 0.5
-                speartorView.layer.borderColor = lineColor.cgColor
-                speartorView.layer.masksToBounds = true
-                speartorView.layer.cornerRadius = 0
+        
+        // 设置默认城市
+        if mode == .city || mode == .area {
+            cityArray = getCityArray(for: provinceIndex)
+            
+            if let cityIndex = cityArray.firstIndex(where: { $0.name.contains(selectedCityName) }) {
+                self.cityIndex = cityIndex
+                selectedCity = cityArray[cityIndex]
             } else {
-                speartorView.backgroundColor = .clear
+                selectedCity = cityArray.first ?? TFYSwiftCitylistModel()
+            }
+        }
+        
+        // 设置默认区域
+        if mode == .area {
+            areaArray = getAreaArray(for: provinceIndex, cityIndex: cityIndex)
+            
+            if let areaIndex = areaArray.firstIndex(where: { $0.name.contains(selectedAreaName) }) {
+                self.areaIndex = areaIndex
+                selectedArea = areaArray[areaIndex]
+            } else {
+                selectedArea = areaArray.first ?? TFYSwiftArealistModel()
             }
         }
     }
     
+    private func scrollToSelectedRow() {
+        var indexArray: [Int] = []
+        
+        switch mode {
+        case .province:
+            indexArray = [provinceIndex]
+        case .city:
+            indexArray = [provinceIndex, cityIndex]
+        case .area:
+            indexArray = [provinceIndex, cityIndex, areaIndex]
+        }
+        
+        for (component, index) in indexArray.enumerated() {
+            pickerView.selectRow(index, inComponent: component, animated: false)
+        }
+    }
+    
+    private func setupUI() {
+        setTitle(mode.title)
+        contentView.addSubview(pickerView)
+        
+        // 使用frame布局
+        let pickerY = headerView.frame.maxY + 0.5
+        let pickerHeight = contentView.frame.height - pickerY
+        pickerView.frame = CGRect(x: 0, y: pickerY, width: contentView.frame.width, height: pickerHeight)
+    }
+    
+    // MARK: - Helper Methods
+    private func getCityArray(for provinceIndex: Int) -> [TFYSwiftCitylistModel] {
+        guard provinceIndex < provinceArray.count else { return [] }
+        return provinceArray[provinceIndex].citylist ?? []
+    }
+    
+    private func getAreaArray(for provinceIndex: Int, cityIndex: Int) -> [TFYSwiftArealistModel] {
+        guard provinceIndex < provinceArray.count,
+              cityIndex < getCityArray(for: provinceIndex).count else { return [] }
+        return getCityArray(for: provinceIndex)[cityIndex].arealist ?? []
+    }
+    
+    // MARK: - Override Methods
+    public override func handleCancel() {
+        super.handleCancel()
+        cancelBlock?()
+    }
+    
+    public override func handleConfirm() {
+        super.handleConfirm()
+        handleResult()
+    }
+    
+    private func handleResult() {
+        resultBlock?(selectedProvince, selectedCity, selectedArea)
+    }
+    
+    // MARK: - Public Configuration
+    public func changeSeparatorLineColor(_ color: UIColor) {
+        pickerView.subviews.forEach { view in
+            if view.height < PickerLayout.headerHeight {
+                view.backgroundColor = .clear
+                view.layer.borderWidth = 0.5
+                view.layer.borderColor = color.cgColor
+                view.layer.masksToBounds = true
+                view.layer.cornerRadius = 0
+            } else {
+                view.backgroundColor = .clear
+            }
+        }
+    }
 }
 
-extension TFYSwiftAddressPickerView: UIPickerViewDelegate,UIPickerViewDataSource {
+// MARK: - UIPickerViewDataSource
+@available(iOS 15.0, *)
+extension TFYSwiftAddressPickerView: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        switch showType {
-        case .TFYSwiftAddressPickerModeProvince:
+        switch mode {
+        case .province:
             return 1
-        case .TFYSwiftAddressPickerModeCity:
+        case .city:
             return 2
-        case .TFYSwiftAddressPickerModeArea:
+        case .area:
             return 3
         }
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return provinceModelArr.count
+        switch mode {
+        case .province:
+            return provinceArray.count
+        case .city:
+            switch component {
+            case 0:
+                return provinceArray.count
+            case 1:
+                return cityArray.count
+            default:
+                return 0
+            }
+        case .area:
+            switch component {
+            case 0:
+                return provinceArray.count
+            case 1:
+                return cityArray.count
+            case 2:
+                return areaArray.count
+            default:
+                return 0
+            }
         }
-        if component == 1 {
-            return cityModelArr.count
-        }
-        if component == 2 {
-            return areaModelArr.count
-        }
-        return 0
     }
-    
-    public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return kPickerSliderHeight
+}
+
+// MARK: - UIPickerViewDelegate
+@available(iOS 15.0, *)
+extension TFYSwiftAddressPickerView: UIPickerViewDelegate {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch mode {
+        case .province:
+            return provinceArray[row].name
+        case .city:
+            switch component {
+            case 0:
+                return provinceArray[row].name
+            case 1:
+                return cityArray[row].name
+            default:
+                return ""
+            }
+        case .area:
+            switch component {
+            case 0:
+                return provinceArray[row].name
+            case 1:
+                return cityArray[row].name
+            case 2:
+                return areaArray[row].name
+            default:
+                return ""
+            }
+        }
     }
     
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        self.changeSpearatorLineColor(lineColor: kPickerBorderColor)
-        let width:CGFloat = self.alertView.kPickerWidth/CGFloat(3)
-        let pickView:TFYSwiftPickerShowBaseView = TFYSwiftPickerShowBaseView(frame: CGRect(x: 0, y: 0, width: width, height: 35))
-        if component == 0 {
-            pickView.title = provinceModelArr[row].name
-        } else if component == 1 {
-            pickView.title = cityModelArr[row].name
-        } else if component == 2 {
-            pickView.title = areaModelArr[row].name
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.textColor = PickerColors.text
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.8
+        
+        // 设置合适的高度和边距
+        label.frame = CGRect(x: 0, y: 0, width: pickerView.frame.width, height: 44)
+        label.text = ""
+        
+        switch mode {
+        case .province:
+            label.text = provinceArray[row].name
+        case .city:
+            switch component {
+            case 0:
+                label.text = provinceArray[row].name
+            case 1:
+                label.text = cityArray[row].name
+            default:
+                label.text = ""
+            }
+        case .area:
+            switch component {
+            case 0:
+                label.text = provinceArray[row].name
+            case 1:
+                label.text = cityArray[row].name
+            case 2:
+                label.text = areaArray[row].name
+            default:
+                label.text = ""
+            }
         }
-        return pickView
+        
+        return label
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0 {
+        switch mode {
+        case .province:
             provinceIndex = row
-            switch showType {
-            case .TFYSwiftAddressPickerModeProvince:
-                selectProvinceModel = provinceModelArr[provinceIndex]
-            case .TFYSwiftAddressPickerModeCity:
-                cityModelArr = provinceModelArr[provinceIndex].citylist!
-                self.pickerView.reloadComponent(1)
-                self.pickerView.selectRow(0, inComponent: 1, animated: true)
-                selectProvinceModel = provinceModelArr[provinceIndex]
-                selectCityModel = cityModelArr.first!
-            case .TFYSwiftAddressPickerModeArea:
-                cityModelArr = provinceModelArr[provinceIndex].citylist!
-                areaModelArr = provinceModelArr[provinceIndex].citylist![0].arealist!
-                self.pickerView.reloadComponent(1)
-                self.pickerView.selectRow(0, inComponent: 1, animated: true)
-                self.pickerView.reloadComponent(2)
-                self.pickerView.selectRow(0, inComponent: 2, animated: true)
-                selectProvinceModel = provinceModelArr[provinceIndex]
-                selectCityModel = cityModelArr.first!
-                selectAreaModel = areaModelArr.first!
-            }
-        } else if component == 1 {
-            cityIndex = row
-            switch showType {
-            case .TFYSwiftAddressPickerModeCity:
-                  selectCityModel = cityModelArr[cityIndex]
-            case .TFYSwiftAddressPickerModeArea:
-                areaModelArr = provinceModelArr[provinceIndex].citylist![cityIndex].arealist!
-                self.pickerView.reloadComponent(2)
-                self.pickerView.selectRow(0, inComponent: 2, animated: true)
-                selectCityModel = cityModelArr[cityIndex]
-                selectAreaModel = areaModelArr.first!
-            default:break
+            selectedProvince = provinceArray[row]
+            
+        case .city:
+            switch component {
+            case 0:
+                provinceIndex = row
+                selectedProvince = provinceArray[row]
+                cityArray = getCityArray(for: provinceIndex)
+                cityIndex = 0
+                selectedCity = cityArray.first ?? TFYSwiftCitylistModel()
+                pickerView.reloadComponent(1)
+                pickerView.selectRow(0, inComponent: 1, animated: false)
+                
+            case 1:
+                cityIndex = row
+                selectedCity = cityArray[row]
+            default:
+                break
             }
             
-        } else if component == 2 {
-            areaIndex = row
-            if showType == .TFYSwiftAddressPickerModeArea {
-                selectAreaModel = areaModelArr[areaIndex]
+        case .area:
+            switch component {
+            case 0:
+                provinceIndex = row
+                selectedProvince = provinceArray[row]
+                cityArray = getCityArray(for: provinceIndex)
+                cityIndex = 0
+                selectedCity = cityArray.first ?? TFYSwiftCitylistModel()
+                areaArray = getAreaArray(for: provinceIndex, cityIndex: cityIndex)
+                areaIndex = 0
+                selectedArea = areaArray.first ?? TFYSwiftArealistModel()
+                pickerView.reloadComponent(1)
+                pickerView.reloadComponent(2)
+                pickerView.selectRow(0, inComponent: 1, animated: false)
+                pickerView.selectRow(0, inComponent: 2, animated: false)
+                
+            case 1:
+                cityIndex = row
+                selectedCity = cityArray[row]
+                areaArray = getAreaArray(for: provinceIndex, cityIndex: cityIndex)
+                areaIndex = 0
+                selectedArea = areaArray.first ?? TFYSwiftArealistModel()
+                pickerView.reloadComponent(2)
+                pickerView.selectRow(0, inComponent: 2, animated: false)
+                
+            case 2:
+                areaIndex = row
+                selectedArea = areaArray[row]
+            default:
+                break
             }
         }
         
         if isAutoSelect {
-            if (addressResultBlock != nil) {
-                addressResultBlock!(selectProvinceModel,selectCityModel,selectAreaModel)
-            }
+            handleResult()
         }
+    }
+}
+
+// MARK: - Legacy Support
+@available(iOS 15.0, *)
+public extension TFYSwiftAddressPickerView {
+    static func showAddressPickerWithTitle(
+        showType: TFYSwiftAddressPickerMode = .area,
+        defaultSelected: [String],
+        isAutoSelect: Bool,
+        resultBlock: @escaping AddressPickerResultBlock,
+        cancelBlock: @escaping AddressPickerCancelBlock
+    ) {
+        show(
+            mode: showType,
+            defaultSelected: defaultSelected,
+            isAutoSelect: isAutoSelect,
+            result: resultBlock,
+            cancel: cancelBlock
+        )
     }
 }

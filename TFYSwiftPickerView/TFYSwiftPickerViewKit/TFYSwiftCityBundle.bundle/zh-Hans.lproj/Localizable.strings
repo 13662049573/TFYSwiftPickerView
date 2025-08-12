@@ -1,0 +1,61 @@
+// TFYSwiftPickerView 中文简体语言包
+
+// 通用按钮
+"cancel" = "取消";
+"confirm" = "完成";
+"done" = "完成";
+
+// 地址选择器
+"select_province" = "请选择省份";
+"select_city" = "请选择城市";
+"select_area" = "请选择地区";
+
+// 字符串选择器
+"select_gender" = "选择性别";
+"select_option" = "选择选项";
+
+// 日期选择器
+"select_date" = "选择日期";
+"select_time" = "选择时间";
+"select_datetime" = "选择日期时间";
+"select_countdown" = "选择倒计时";
+
+// 年份、月份、日期
+"year" = "年";
+"month" = "月";
+"day" = "日";
+"hour" = "时";
+"minute" = "分";
+"second" = "秒";
+
+// 演示文本
+"string_picker_demo" = "字符串选择器";
+"multiple_picker_demo" = "多列选择器";
+"time_picker_demo" = "时间选择器";
+"date_picker_demo" = "日期选择器";
+"datetime_picker_demo" = "日期时间选择器";
+"countdown_picker_demo" = "倒计时选择器";
+"full_datetime_picker_demo" = "完整日期时间选择器";
+"ymdhm_picker_demo" = "年月日时分选择器";
+"mdhm_picker_demo" = "月日时分选择器";
+"ymd_picker_demo" = "年月日选择器";
+"ym_picker_demo" = "年月选择器";
+"year_picker_demo" = "年份选择器";
+"md_picker_demo" = "月日选择器";
+"hm_picker_demo" = "时分选择器";
+"range_date_picker_demo" = "带范围限制的日期选择器";
+"province_picker_demo" = "省份选择器";
+"city_picker_demo" = "省市选择器";
+"area_picker_demo" = "省市区选择器";
+"default_address_picker_demo" = "默认选中地址选择器";
+"auto_select_demo" = "自动选择模式";
+
+// 结果提示
+"user_cancelled" = "用户取消";
+"selected" = "选中";
+
+// 设置
+"settings" = "设置";
+"dark_mode" = "深色模式";
+"reset_theme" = "重置主题";
+"picker_config_options" = "选择器配置选项"; 
