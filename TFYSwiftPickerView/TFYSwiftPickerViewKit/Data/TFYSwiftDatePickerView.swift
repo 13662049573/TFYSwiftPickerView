@@ -8,7 +8,6 @@
 
 import UIKit
 
-@available(iOS 15.0, *)
 public enum TFYSwiftDatePickerMode: Int, CaseIterable {
     /// 系统模式 HH:mm
     case time = 0
@@ -81,18 +80,14 @@ public enum TFYSwiftDatePickerMode: Int, CaseIterable {
     }
 }
 
-@available(iOS 15.0, *)
 public enum TFYSwiftDatePickerStyle: Int {
     case system = 1
     case custom = 2
 }
 
-@available(iOS 15.0, *)
 public typealias DatePickerResultBlock = (_ selectedValue: String) -> Void
-@available(iOS 15.0, *)
 public typealias DatePickerCancelBlock = () -> Void
 
-@available(iOS 15.0, *)
 public class TFYSwiftDatePickerView: TFYSwiftPickerBaseView {
     
     // MARK: - Properties
@@ -482,7 +477,6 @@ public class TFYSwiftDatePickerView: TFYSwiftPickerBaseView {
 }
 
 // MARK: - UIPickerViewDataSource
-@available(iOS 15.0, *)
 extension TFYSwiftDatePickerView: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch showType {
@@ -570,7 +564,6 @@ extension TFYSwiftDatePickerView: UIPickerViewDataSource {
 }
 
 // MARK: - UIPickerViewDelegate
-@available(iOS 15.0, *)
 extension TFYSwiftDatePickerView: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch showType {
@@ -794,7 +787,6 @@ extension TFYSwiftDatePickerView: UIPickerViewDelegate {
 }
 
 // MARK: - Legacy Support
-@available(iOS 15.0, *)
 public extension TFYSwiftDatePickerView {
     static func showDatePickerWithTitle(
         title: String,

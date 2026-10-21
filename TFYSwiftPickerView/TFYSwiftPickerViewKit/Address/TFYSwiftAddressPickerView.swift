@@ -8,7 +8,6 @@
 
 import UIKit
 
-@available(iOS 15.0, *)
 public enum TFYSwiftAddressPickerMode: Int, CaseIterable {
     /// 只显示省
     case province = 0
@@ -29,12 +28,9 @@ public enum TFYSwiftAddressPickerMode: Int, CaseIterable {
     }
 }
 
-@available(iOS 15.0, *)
 public typealias AddressPickerResultBlock = (_ province: TFYSwiftAddressModel, _ city: TFYSwiftCitylistModel, _ area: TFYSwiftArealistModel) -> Void
-@available(iOS 15.0, *)
 public typealias AddressPickerCancelBlock = () -> Void
 
-@available(iOS 15.0, *)
 public class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
     
     // MARK: - Properties
@@ -302,7 +298,6 @@ public class TFYSwiftAddressPickerView: TFYSwiftPickerBaseView {
 }
 
 // MARK: - UIPickerViewDataSource
-@available(iOS 15.0, *)
 extension TFYSwiftAddressPickerView: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch mode {
@@ -344,7 +339,6 @@ extension TFYSwiftAddressPickerView: UIPickerViewDataSource {
 }
 
 // MARK: - UIPickerViewDelegate
-@available(iOS 15.0, *)
 extension TFYSwiftAddressPickerView: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch mode {
@@ -478,7 +472,6 @@ extension TFYSwiftAddressPickerView: UIPickerViewDelegate {
 }
 
 // MARK: - Legacy Support
-@available(iOS 15.0, *)
 public extension TFYSwiftAddressPickerView {
     static func showAddressPickerWithTitle(
         showType: TFYSwiftAddressPickerMode = .area,

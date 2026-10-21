@@ -8,7 +8,6 @@
 
 import UIKit
 
-@available(iOS 15.0, *)
 public class TFYSwiftPickerShowBaseView: UIView {
     
     // MARK: - Properties

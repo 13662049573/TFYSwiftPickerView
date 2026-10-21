@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-@available(iOS 15.0, *)
 public extension Date {
     
     // MARK: - Calendar Constants

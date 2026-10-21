@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 // MARK: - Screen Constants
-@available(iOS 15.0, *)
 public struct PickerScreenConstants {
     /// 屏幕宽度
     static let width: CGFloat = UIScreen.main.bounds.width
@@ -45,7 +44,6 @@ public struct PickerScreenConstants {
 }
 
 // MARK: - Color Constants
-@available(iOS 15.0, *)
 public struct PickerColors {
     /// 主题颜色 - 支持深色模式
     static let theme: UIColor = UIColor { traitCollection in
@@ -122,7 +120,6 @@ public struct PickerColors {
 }
 
 // MARK: - Layout Constants
-@available(iOS 15.0, *)
 public struct PickerLayout {
     /// 弹出框内容高度
     static let contentHeight: CGFloat = 265.0
@@ -161,7 +158,6 @@ public struct PickerLayout {
 }
 
 // MARK: - Legacy Support (保持向后兼容)
-@available(iOS 15.0, *)
 public struct PickerLegacyConstants {
     static let kPickerScrenWidth: CGFloat = PickerScreenConstants.width
     static let kPickerScrenHeight: CGFloat = PickerScreenConstants.height
