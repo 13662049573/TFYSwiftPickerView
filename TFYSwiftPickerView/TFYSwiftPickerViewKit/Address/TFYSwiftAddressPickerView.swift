@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import TFYSwiftPickerViewKitBase
+#endif
 
 public enum TFYSwiftAddressPickerMode: Int, CaseIterable {
     /// 只显示省

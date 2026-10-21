@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import TFYSwiftPickerViewKitBase
+#endif
 
 public enum TFYSwiftStringPickerMode: Int, CaseIterable {
     case single = 0

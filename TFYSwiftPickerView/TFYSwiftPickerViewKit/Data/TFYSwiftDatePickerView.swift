@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import TFYSwiftPickerViewKitBase
+#endif
 
 public enum TFYSwiftDatePickerMode: Int, CaseIterable {
     /// 系统模式 HH:mm
