@@ -27,14 +27,7 @@ public class TFYSwiftLocalizationManager {
     
     // MARK: - Setup Methods
     private func setupBundle() {
-        // 获取TFYSwiftCityBundle.bundle的路径
-        if let bundlePath = Bundle.main.path(forResource: "TFYSwiftCityBundle", ofType: "bundle"),
-           let bundle = Bundle(path: bundlePath) {
-            self.bundle = bundle
-        } else {
-            // 如果找不到bundle，使用主bundle
-            self.bundle = Bundle.main
-        }
+        self.bundle = TFYSwiftResourceBundle.cityBundle
     }
     
     private func setupLanguage() {

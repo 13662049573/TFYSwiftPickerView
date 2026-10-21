@@ -8,6 +8,9 @@
 
 import UIKit
 import Foundation
+#if SWIFT_PACKAGE
+import TFYSwiftPickerViewKitBase
+#endif
 
 @available(iOS 15.0, *)
 public class TFYSwiftAddressModel: NSObject, Codable {
@@ -68,9 +71,13 @@ public class TFYSwiftArealistModel: NSObject, Codable {
 // MARK: - Bundle Resource Helper
 @available(iOS 15.0, *)
 public func getBundleResource(bundleName: String, resourceName: String, ofType ext: String?) -> String? {
-    let resourcePath = bundleName
-    guard let bundlePath = Bundle.main.path(forResource: resourcePath, ofType: "bundle"),
-          let bundle = Bundle(path: bundlePath) else {
+    let bundle: Bundle
+    if bundleName == "TFYSwiftCityBundle" {
+        bundle = TFYSwiftResourceBundle.cityBundle
+    } else if let bundlePath = Bundle.main.path(forResource: bundleName, ofType: "bundle"),
+              let resolvedBundle = Bundle(path: bundlePath) {
+        bundle = resolvedBundle
+    } else {
         return nil
     }
     return bundle.path(forResource: resourceName, ofType: ext)

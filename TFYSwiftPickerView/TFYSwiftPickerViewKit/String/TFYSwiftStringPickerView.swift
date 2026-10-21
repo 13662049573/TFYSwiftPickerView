@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import TFYSwiftPickerViewKitBase
+#endif
 
 @available(iOS 15.0, *)
 public enum TFYSwiftStringPickerMode: Int, CaseIterable {
