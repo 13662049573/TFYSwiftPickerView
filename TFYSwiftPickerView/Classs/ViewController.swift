@@ -8,7 +8,6 @@
 
 import UIKit
 
-@available(iOS 15.0, *)
 class ViewController: UIViewController {
 
     // MARK: - Properties
@@ -69,7 +68,7 @@ class ViewController: UIViewController {
         titleLabel.numberOfLines = 0
         
         let subtitleLabel = UILabel()
-        subtitleLabel.text = "支持 iOS 15+ | 深色模式 | iPad适配"
+        subtitleLabel.text = "支持 iOS 16+ | 深色模式 | iPad适配"
         subtitleLabel.font = UIFont.caption(size: 14)
         subtitleLabel.textColor = PickerColors.text.withAlphaComponent(0.7)
         subtitleLabel.textAlignment = .center
@@ -509,7 +508,6 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-@available(iOS 15.0, *)
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
@@ -541,7 +539,6 @@ extension ViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-@available(iOS 15.0, *)
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -562,13 +559,11 @@ extension ViewController: UITableViewDelegate {
 }
 
 // MARK: - Demo Models
-@available(iOS 15.0, *)
 struct DemoItem {
     let title: String
     let type: DemoType
 }
 
-@available(iOS 15.0, *)
 enum DemoType {
     // 字符串选择器
     case stringSingle
@@ -602,7 +597,6 @@ enum DemoType {
 }
 
 // MARK: - Legacy Support
-@available(iOS 15.0, *)
 extension ViewController {
     // 保留旧版本的API调用方式，确保向后兼容
     private func showLegacyDemo() {

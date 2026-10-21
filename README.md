@@ -6,11 +6,11 @@
 ![Platform](https://img.shields.io/cocoapods/p/TFYSwiftPickerViewKit.svg?style=flat)
 ![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg)
 ![License](https://img.shields.io/cocoapods/l/TFYSwiftPickerViewKit.svg?style=flat)
-![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)
+![iOS](https://img.shields.io/badge/iOS-16.0+-blue.svg)
 ![iPad](https://img.shields.io/badge/iPad-Supported-green.svg)
 ![Languages](https://img.shields.io/badge/Languages-中文%20%7C%20English-blue.svg)
 
-**🚀 全新优化版本 - 专为 iOS 15+ 打造的高性能选择器库，支持中英文双语**
+**🚀 全新优化版本 - 专为 iOS 16+ 打造的高性能选择器库，支持中英文双语**
 
 </div>
 
@@ -19,7 +19,7 @@
 ## ✨ 全新特性
 
 ### 🎨 现代化设计
-- **iOS 15+ 原生支持** - 充分利用最新系统特性
+- **iOS 16+ 原生支持** - 充分利用最新系统特性
 - **深色模式完美适配** - 自动跟随系统主题切换
 - **iPad 完美适配** - 大屏幕设备优化体验
 - **触觉反馈** - 增强用户交互体验
@@ -425,14 +425,19 @@ PickerColors.maskBackground
 
 ## 📱 系统要求
 
-- **iOS 15.0+** - 充分利用最新系统特性
+- **iOS 16.0+** - 充分利用最新系统特性
 - **Swift 5.5+** - 现代化 Swift 语法
-- **Xcode 13.0+** - 完整开发支持
+- **Xcode 14.0+** - 完整开发支持
 - **iPad 支持** - 完美适配大屏设备
 
 ---
 
 ## 🎯 更新日志
+
+### v1.1.0 (2026-10-21) 🚀
+- 📱 **最低系统版本** - 提升至 iOS 16.0
+- 🧹 **API 现代化** - 移除旧版导航栏与圆角遮罩兼容代码
+- 📦 **CocoaPods** - 版本号 1.1.0
 
 ### v1.0.8 (2024-01-XX) 🚀
 - ✨ **多语言支持** - 完整的中英文双语支持
@@ -446,7 +451,7 @@ PickerColors.maskBackground
 
 ### v1.0.7 (历史版本)
 - 基础功能实现
-- iOS 15+ 支持
+- iOS 16+ 支持
 - 基本选择器功能
 
 

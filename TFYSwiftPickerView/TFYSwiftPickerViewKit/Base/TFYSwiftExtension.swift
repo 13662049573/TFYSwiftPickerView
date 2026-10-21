@@ -9,8 +9,18 @@
 import Foundation
 import UIKit
 
+private extension CACornerMask {
+    init(uiRectCorners: UIRectCorner) {
+        var corners: CACornerMask = []
+        if uiRectCorners.contains(.topLeft) { corners.insert(.layerMinXMinYCorner) }
+        if uiRectCorners.contains(.topRight) { corners.insert(.layerMaxXMinYCorner) }
+        if uiRectCorners.contains(.bottomLeft) { corners.insert(.layerMinXMaxYCorner) }
+        if uiRectCorners.contains(.bottomRight) { corners.insert(.layerMaxXMaxYCorner) }
+        self = corners
+    }
+}
+
 // MARK: - Data Extensions
-@available(iOS 15.0, *)
 public extension Data {
     /// 转换为字符串
     func toString(encoding: String.Encoding = .utf8) -> String? {
@@ -49,7 +59,6 @@ public extension Data {
 }
 
 // MARK: - String Extensions
-@available(iOS 15.0, *)
 public extension String {
     /// 从base64初始化
     init?(base64: String) {
@@ -91,15 +100,13 @@ public extension String {
 }
 
 // MARK: - UIWindow Extensions
-@available(iOS 15.0, *)
 public extension UIWindow {
     /// 获取当前key window
     static var keyWindow: UIWindow? {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
-            return nil
-        }
-        return window
+        return UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first(where: { $0.activationState == .foregroundActive })?
+            .keyWindow
     }
     
     /// 获取所有窗口
@@ -112,7 +119,6 @@ public extension UIWindow {
 }
 
 // MARK: - UIDevice Extensions
-@available(iOS 15.0, *)
 public extension UIDevice {
     /// 是否为iPhone X系列设备
     var hasNotch: Bool {
@@ -159,15 +165,13 @@ public extension UIDevice {
 }
 
 // MARK: - UIView Extensions
-@available(iOS 15.0, *)
 public extension UIView {
     /// 设置圆角
     func setCornerRadius(_ radius: CGFloat, corners: UIRectCorner = .allCorners) {
-        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = bounds
-        maskLayer.path = maskPath.cgPath
-        layer.mask = maskLayer
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
+        layer.cornerCurve = .continuous
+        layer.maskedCorners = CACornerMask(uiRectCorners: corners)
     }
     
     /// 添加阴影
@@ -268,7 +272,6 @@ public extension UIView {
 }
 
 // MARK: - UIColor Extensions
-@available(iOS 15.0, *)
 public extension UIColor {
     /// 从十六进制字符串创建颜色
     static func hex(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
@@ -341,7 +344,6 @@ public extension UIColor {
 }
 
 // MARK: - UIFont Extensions
-@available(iOS 15.0, *)
 public extension UIFont {
     /// 创建自适应字体
     static func adaptive(size: CGFloat, weight: Weight = .regular) -> UIFont {
@@ -365,7 +367,6 @@ public extension UIFont {
 }
 
 // MARK: - Animation Extensions
-@available(iOS 15.0, *)
 public extension UIView {
     /// 淡入动画
     func fadeIn(duration: TimeInterval = 0.25, completion: (() -> Void)? = nil) {

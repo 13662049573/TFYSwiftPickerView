@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 // MARK: - String Extension for Localization
-@available(iOS 15.0, *)
 public extension String {
     /// 本地化字符串
     var localized: String {
@@ -24,13 +23,11 @@ public extension String {
 }
 
 // MARK: - Notification Names
-@available(iOS 15.0, *)
 public extension Notification.Name {
     static let languageDidChange = Notification.Name("TFYSwiftLanguageDidChange")
 }
 
 // MARK: - Legacy Support
-@available(iOS 15.0, *)
 public func TFYSwiftLocalizedString(_ key: String, comment: String = "") -> String {
     return TFYSwiftLocalizationManager.shared.localizedString(for: key, comment: comment)
 } 

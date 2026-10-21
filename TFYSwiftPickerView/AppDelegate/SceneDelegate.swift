@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -37,26 +36,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // MARK: - Navigation Bar Setup
     private func setupNavigationBarAppearance() {
-        if #available(iOS 15.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = PickerColors.theme
-            appearance.titleTextAttributes = [
-                .foregroundColor: PickerColors.text,
-                .font: UIFont.systemFont(ofSize: 17, weight: .semibold)
-            ]
-            
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            UINavigationBar.appearance().compactAppearance = appearance
-        } else {
-            UINavigationBar.appearance().barTintColor = PickerColors.theme
-            UINavigationBar.appearance().tintColor = PickerColors.text
-            UINavigationBar.appearance().titleTextAttributes = [
-                .foregroundColor: PickerColors.text,
-                .font: UIFont.systemFont(ofSize: 17, weight: .semibold)
-            ]
-        }
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = PickerColors.theme
+        appearance.titleTextAttributes = [
+            .foregroundColor: PickerColors.text,
+            .font: UIFont.systemFont(ofSize: 17, weight: .semibold)
+        ]
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

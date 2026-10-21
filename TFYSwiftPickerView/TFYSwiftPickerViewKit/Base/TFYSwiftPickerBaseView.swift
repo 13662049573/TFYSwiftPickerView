@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-@available(iOS 15.0, *)
 public class TFYSwiftPickerBaseView: UIView {
     
     // MARK: - Properties
@@ -328,7 +327,6 @@ public class TFYSwiftPickerBaseView: UIView {
 }
 
 // MARK: - Legacy Support
-@available(iOS 15.0, *)
 public extension TFYSwiftPickerBaseView {
     /// 兼容旧版本的属性
     var alertView: UIView { containerView }

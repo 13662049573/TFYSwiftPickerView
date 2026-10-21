@@ -2,12 +2,12 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TFYSwiftPickerViewKit"
 
-  spec.version      = "1.0.9"
+  spec.version      = "1.1.0"
 
-  spec.summary      = "Swift版选择器，支持iOS 15+，Swift 5，包含字符串选择器、日期选择器、地址选择器，支持多语言"
+  spec.summary      = "Swift版选择器，支持iOS 16+，Swift 5，包含字符串选择器、日期选择器、地址选择器，支持多语言"
 
   spec.description  = <<-DESC
-  Swift版选择器，最低支持iOS 15，Swift 5
+  Swift版选择器，最低支持iOS 16，Swift 5
   
   功能特性：
   - 字符串选择器（单选/多选）
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   - 使用Frame布局，避免Auto Layout冲突
   - 完整的导航栏支持
   
-  支持iOS 15.0+，Swift 5.0+
+  支持iOS 16.0+，Swift 5.0+
                    DESC
 
   spec.homepage     = "https://github.com/13662049573/TFYSwiftPickerView"
@@ -29,7 +29,7 @@ Pod::Spec.new do |spec|
   
   spec.author       = { "田风有" => "420144542@qq.com" }
   
-  spec.platform     = :ios, "15.0"
+  spec.platform     = :ios, "16.0"
 
   spec.swift_version = '5.0'
 

@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-@available(iOS 15.0, *)
 public class TFYSwiftAddressModel: NSObject, Codable {
     public var code: String = ""
     public var name: String = ""
@@ -28,7 +27,6 @@ public class TFYSwiftAddressModel: NSObject, Codable {
     }
 }
 
-@available(iOS 15.0, *)
 public class TFYSwiftCitylistModel: NSObject, Codable {
     public var code: String = ""
     public var name: String = ""
@@ -47,7 +45,6 @@ public class TFYSwiftCitylistModel: NSObject, Codable {
     }
 }
 
-@available(iOS 15.0, *)
 public class TFYSwiftArealistModel: NSObject, Codable {
     public var code: String = ""
     public var name: String = ""
@@ -66,7 +63,6 @@ public class TFYSwiftArealistModel: NSObject, Codable {
 }
 
 // MARK: - Bundle Resource Helper
-@available(iOS 15.0, *)
 public func getBundleResource(bundleName: String, resourceName: String, ofType ext: String?) -> String? {
     let resourcePath = bundleName
     guard let bundlePath = Bundle.main.path(forResource: resourcePath, ofType: "bundle"),
@@ -77,7 +73,6 @@ public func getBundleResource(bundleName: String, resourceName: String, ofType e
 }
 
 // MARK: - JSON Helper
-@available(iOS 15.0, *)
 public func loadJSONData(name: String) -> [[String: Any]] {
     guard let path = getBundleResource(bundleName: "TFYSwiftCityBundle", resourceName: name, ofType: "json"),
           let url = URL(string: "file://" + path) else {
@@ -103,7 +98,6 @@ public func loadJSONData(name: String) -> [[String: Any]] {
 }
 
 // MARK: - Legacy Support
-@available(iOS 15.0, *)
 public func kPickerGetJSON(name: String) -> [[String: Any]] {
     return loadJSONData(name: name)
 }

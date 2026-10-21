@@ -8,18 +8,14 @@
 
 import UIKit
 
-@available(iOS 15.0, *)
 public enum TFYSwiftStringPickerMode: Int, CaseIterable {
     case single = 0
     case multiple = 1
 }
 
-@available(iOS 15.0, *)
 public typealias StringPickerResultBlock = (_ selectedValue: Any) -> Void
-@available(iOS 15.0, *)
 public typealias StringPickerCancelBlock = () -> Void
 
-@available(iOS 15.0, *)
 public class TFYSwiftStringPickerView: TFYSwiftPickerBaseView {
     
     // MARK: - Properties
@@ -215,7 +211,6 @@ public class TFYSwiftStringPickerView: TFYSwiftPickerBaseView {
 }
 
 // MARK: - UIPickerViewDataSource
-@available(iOS 15.0, *)
 extension TFYSwiftStringPickerView: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch mode {
@@ -237,7 +232,6 @@ extension TFYSwiftStringPickerView: UIPickerViewDataSource {
 }
 
 // MARK: - UIPickerViewDelegate
-@available(iOS 15.0, *)
 extension TFYSwiftStringPickerView: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch mode {
@@ -295,7 +289,6 @@ extension TFYSwiftStringPickerView: UIPickerViewDelegate {
 }
 
 // MARK: - Legacy Support
-@available(iOS 15.0, *)
 public extension TFYSwiftStringPickerView {
     static func showStringPickerWithTitle(
         title: String,
